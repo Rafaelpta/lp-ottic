@@ -69,6 +69,7 @@ export function AnimatedInput({ onSubmit, value = "", onChange }: AnimatedInputP
         value={value}
         onChange={(e) => onChange?.(e.target.value)}
         onKeyDown={handleKeyDown}
+        autoFocus
         className="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-3 text-sm ring-offset-background placeholder:text-muted-foreground outline-none ring-2 ring-ring ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-mono resize-none pr-32 relative z-20"
         rows={4}
       />
