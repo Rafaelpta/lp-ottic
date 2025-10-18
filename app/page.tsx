@@ -346,6 +346,276 @@ export default function Home() {
           </div>
         </section>
 
+        {/* How It Works Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <span className="text-primary text-xl">✦</span>
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">How It Works</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+                Simple Process, Powerful Results
+              </h2>
+              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
+                Get from idea to execution in three simple steps. No steep learning curve.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+              <div className="flex flex-col items-start p-6 rounded-lg border bg-card">
+                <div className="text-4xl font-bold text-primary mb-4">01</div>
+                <h3 className="text-xl font-bold mb-2">Tell Us Your Goal</h3>
+                <p className="text-muted-foreground">
+                  Describe what you want to achieve. Launch a product? Generate leads? Build authority? We handle the strategy.
+                </p>
+              </div>
+
+              <div className="flex flex-col items-start p-6 rounded-lg border bg-card">
+                <div className="text-4xl font-bold text-primary mb-4">02</div>
+                <h3 className="text-xl font-bold mb-2">We Execute Everything</h3>
+                <p className="text-muted-foreground">
+                  Our AI agents coordinate across channels—content, ads, email, social. Fully managed execution, no context switching.
+                </p>
+              </div>
+
+              <div className="flex flex-col items-start p-6 rounded-lg border bg-card">
+                <div className="text-4xl font-bold text-primary mb-4">03</div>
+                <h3 className="text-xl font-bold mb-2">Track & Optimize</h3>
+                <p className="text-muted-foreground">
+                  Real-time dashboard shows what's working. Agents learn and optimize automatically. You focus on building.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <span className="text-primary text-xl">✦</span>
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Use Cases</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+                Built for Technical Teams
+              </h2>
+              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
+                From pre-launch to scale, Ottic adapts to your GTM needs.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <CardTitle>Pre-Launch Validation</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Test messaging, find your ICP, and validate demand before building. Launch with traction, not hope.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                    </svg>
+                  </div>
+                  <CardTitle>Growth Stage</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Systematic content engine, multi-channel campaigns, and performance optimization. Scale what works.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <CardTitle>Enterprise GTM</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Coordinate across regions, segments, and channels. One source of truth for your entire GTM operation.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <CardTitle>24/7 Monitoring</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Agents track competitors, trends, and opportunities. Get alerts when something changes in your market.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <CardTitle>Performance Marketing</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Automated A/B testing, budget allocation, and creative optimization. Maximize ROI across all paid channels.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                  </div>
+                  <CardTitle>Content Operations</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    From research to publishing to distribution. Full content pipeline managed by AI, customized to your voice.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Roadmap Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <span className="text-primary text-xl">✦</span>
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Roadmap</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+                What's Coming Next
+              </h2>
+              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
+                We're constantly evolving. Here's what we're building for you.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+              <div className="flex flex-col p-6 rounded-lg border bg-card">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-bold">Multi-Channel Dashboard</h3>
+                  <Badge variant="secondary" className="text-xs">Live</Badge>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Unified view of all your GTM activities across content, ads, email, and social.
+                </p>
+              </div>
+
+              <div className="flex flex-col p-6 rounded-lg border bg-card">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-bold">AI Content Engine</h3>
+                  <Badge variant="secondary" className="text-xs">Live</Badge>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Proprietary AI trained on your brand voice, generating on-brand content at scale.
+                </p>
+              </div>
+
+              <div className="flex flex-col p-6 rounded-lg border bg-card">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-bold">Slack/Discord Integration</h3>
+                  <Badge className="text-xs bg-primary/20 text-primary">In Progress</Badge>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Get updates and control campaigns directly from your team chat. No context switching.
+                </p>
+              </div>
+
+              <div className="flex flex-col p-6 rounded-lg border bg-card">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-bold">Advanced Analytics</h3>
+                  <Badge variant="outline" className="text-xs">Q2 2025</Badge>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Attribution modeling, LTV prediction, and cohort analysis. Data-driven decisions at every level.
+                </p>
+              </div>
+
+              <div className="flex flex-col p-6 rounded-lg border bg-card">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-bold">Team Collaboration</h3>
+                  <Badge variant="outline" className="text-xs">Q2 2025</Badge>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Multi-user workspaces, approval workflows, and role-based permissions for larger teams.
+                </p>
+              </div>
+
+              <div className="flex flex-col p-6 rounded-lg border bg-card">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                  </svg>
+                </div>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-lg font-bold">API & Webhooks</h3>
+                  <Badge variant="outline" className="text-xs">Q3 2025</Badge>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  Integrate Ottic with your existing stack. Build custom workflows and automations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 mx-auto max-w-4xl">
