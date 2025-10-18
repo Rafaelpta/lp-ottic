@@ -105,7 +105,7 @@ export default function Home() {
                       }`}
                     >
                       {userInput.trim() && (
-                        <span className="text-xs font-medium">Vibe market</span>
+                        <span className="text-xs font-medium">Start marketing</span>
                       )}
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -478,7 +478,7 @@ export default function Home() {
       <Dialog open={showLoginModal} onOpenChange={setShowLoginModal}>
         <DialogContent className="sm:max-w-md backdrop-blur-sm">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Vibe Market</DialogTitle>
+            <DialogTitle className="text-2xl font-bold">Start Marketing</DialogTitle>
             <DialogDescription>
               Sign in to start building your GTM infrastructure
             </DialogDescription>
