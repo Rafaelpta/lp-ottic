@@ -13,12 +13,17 @@ const commands = [
   "analyze competitors --last-quarter",
 ];
 
-export function AnimatedInput() {
+interface AnimatedInputProps {
+  onSubmit?: () => void;
+  value?: string;
+  onChange?: (value: string) => void;
+}
+
+export function AnimatedInput({ onSubmit, value = "", onChange }: AnimatedInputProps) {
   const [placeholder, setPlaceholder] = useState("");
   const [commandIndex, setCommandIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [userInput, setUserInput] = useState("");
 
   useEffect(() => {
     const currentCommand = commands[commandIndex];
@@ -43,17 +48,27 @@ export function AnimatedInput() {
     return () => clearTimeout(timer);
   }, [charIndex, isDeleting, commandIndex]);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      if (onSubmit) {
+        onSubmit();
+      }
+    }
+  };
+
   return (
     <div className="relative">
-      {userInput === "" && (
+      {value === "" && (
         <div className="absolute top-3 left-3 pointer-events-none z-10 flex items-center">
           <span className="inline-block w-[2px] h-4 bg-foreground animate-cursor" />
           <span className="text-sm text-muted-foreground font-mono ml-1">{placeholder}</span>
         </div>
       )}
       <textarea
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)}
+        value={value}
+        onChange={(e) => onChange?.(e.target.value)}
+        onKeyDown={handleKeyDown}
         className="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-3 text-sm ring-offset-background placeholder:text-muted-foreground outline-none ring-2 ring-ring ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-mono resize-none pr-32 relative z-20"
         rows={4}
       />
