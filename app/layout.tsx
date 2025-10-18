@@ -19,8 +19,8 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Ottic - AI-Powered Solutions",
-  description: "Build websites, SaaS, and mobile apps in minutes by chatting with AI.",
+  title: "Ottic - GTM Infrastructure for the Age of Agents",
+  description: "One terminal. Your entire GTM. AI agents orchestrating everything from strategy to execution to optimization.",
 };
 
 export default function RootLayout({
