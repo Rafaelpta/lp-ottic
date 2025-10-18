@@ -98,10 +98,10 @@ export default function Home() {
                     <Button
                       size="sm"
                       onClick={handleSubmit}
-                      className={`rounded-full transition-all ${
+                      className={`rounded-full transition-all h-10 hover:opacity-90 hover:scale-105 ${
                         userInput.trim()
                           ? "w-auto px-4 gap-2"
-                          : "w-10 h-10 p-0"
+                          : "w-10 p-0"
                       }`}
                     >
                       {userInput.trim() && (
