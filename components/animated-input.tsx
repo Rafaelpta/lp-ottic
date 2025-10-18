@@ -1,6 +1,5 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 
 const commands = [
@@ -19,6 +18,7 @@ export function AnimatedInput() {
   const [commandIndex, setCommandIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [userInput, setUserInput] = useState("");
 
   useEffect(() => {
     const currentCommand = commands[commandIndex];
@@ -44,9 +44,19 @@ export function AnimatedInput() {
   }, [charIndex, isDeleting, commandIndex]);
 
   return (
-    <Input
-      placeholder={placeholder}
-      className="h-14 pr-32 font-mono"
-    />
+    <div className="relative">
+      {userInput === "" && (
+        <div className="absolute top-3 left-3 pointer-events-none z-10 flex items-center">
+          <span className="inline-block w-[2px] h-4 bg-foreground animate-cursor" />
+          <span className="text-sm text-muted-foreground font-mono ml-1">{placeholder}</span>
+        </div>
+      )}
+      <textarea
+        value={userInput}
+        onChange={(e) => setUserInput(e.target.value)}
+        className="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-3 text-sm ring-offset-background placeholder:text-muted-foreground outline-none ring-2 ring-ring ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-mono resize-none pr-32 relative z-20"
+        rows={4}
+      />
+    </div>
   );
 }
