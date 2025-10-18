@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { AnimatedInput } from "@/components/animated-input";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header/Navigation */}
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b">
+      <header className="px-4 lg:px-6 h-14 flex items-center border-b">
         <a className="flex items-center justify-center" href="#">
           <span className="text-2xl font-bold">Ottic</span>
         </a>
@@ -23,23 +23,23 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-20 md:py-32 lg:py-40">
-          <div className="container px-4 md:px-6 mx-auto max-w-5xl">
-            <div className="flex flex-col items-center space-y-8 text-center">
+        <section className="w-full py-8 md:py-12 lg:py-16 min-h-[calc(100vh-3.5rem)]">
+          <div className="container px-4 md:px-6 mx-auto max-w-5xl h-full flex items-center">
+            <div className="flex flex-col items-center space-y-5 text-center w-full">
               {/* Badge */}
               <Badge variant="secondary" className="px-4 py-1.5 text-sm">
                 GTM Infrastructure for the Age of Agents
               </Badge>
 
               {/* Main Heading */}
-              <div className="space-y-6">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              <div className="space-y-4">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-6xl">
                   Building is easy.
                   <br />
                   Distribution is <span className="italic font-serif text-primary">hard</span>.
                 </h1>
 
-                <div className="space-y-3 text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
+                <div className="space-y-2 text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
                   <p>One terminal. Your entire GTM. AI agents orchestrating everything.</p>
                   <p>From strategy to execution to optimization. No context switching.</p>
                   <p className="opacity-70">Not another marketing tool. Marketing infrastructure.</p>
@@ -47,12 +47,9 @@ export default function Home() {
               </div>
 
               {/* Input Area */}
-              <div className="w-full max-w-2xl space-y-4 pt-8">
+              <div className="w-full max-w-2xl space-y-3 pt-4">
                 <div className="relative">
-                  <Input
-                    placeholder="analyze performance --last-30d --channels all"
-                    className="h-14 pr-32 font-mono"
-                  />
+                  <AnimatedInput />
                   <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-2">
                     <Button variant="ghost" size="sm">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,9 +96,9 @@ export default function Home() {
               </div>
 
               {/* Suggestions */}
-              <div className="pt-8">
-                <p className="text-muted-foreground/70 text-sm mb-4">Not sure where to start? Try one of these:</p>
-                <div className="flex flex-wrap gap-3 justify-center">
+              <div className="pt-3">
+                <p className="text-muted-foreground/70 text-xs mb-2">Not sure where to start? Try one of these:</p>
+                <div className="flex flex-wrap gap-2 justify-center">
                   <Button variant="outline" size="sm" className="gap-2 font-mono text-xs">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2 a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -139,8 +136,8 @@ export default function Home() {
                     generate report --for-ceo
                   </Button>
                 </div>
-                <Button variant="link" className="mt-4 text-sm font-mono">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Button variant="link" className="mt-2 text-xs font-mono">
+                  <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
                   ottic help
