@@ -27,9 +27,7 @@ export default function Home() {
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   const handleSubmit = () => {
-    if (userInput.trim()) {
-      setShowLoginModal(true);
-    }
+    setShowLoginModal(true);
   };
 
   return (
