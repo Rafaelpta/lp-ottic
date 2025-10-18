@@ -4,57 +4,57 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    handle: "@sarahbuilds",
-    initial: "S",
-    quote: "Finally, a GTM tool that doesn't make me want to hire a marketing team. One command and my LinkedIn posts are scheduled, ads are optimized, and I can actually see what's working."
-  },
-  {
-    name: "Marcus Rodriguez",
-    handle: "@marcusdev",
-    initial: "M",
-    quote: "The terminal interface is *chef's kiss*. I can script my entire GTM strategy and integrate it with our deployment pipeline. This is what marketing tooling should have always been."
-  },
-  {
-    name: "Emma Thompson",
-    handle: "@emmathompson",
-    initial: "E",
-    quote: "Self-hosted and open source meant I could customize everything for our compliance requirements. The agents actually learn from our data without sending it to third parties."
-  },
-  {
-    name: "David Kim",
-    handle: "@dkim_builds",
-    initial: "D",
-    quote: "Reduced our GTM stack from 12 tools to 1. The agents coordinate across channels better than our old marketing agency did. And it's all in the terminal where I live anyway."
-  },
-  {
-    name: "Lisa Park",
-    handle: "@lisaparkhq",
+    name: "Leandro Herrera",
+    handle: "Founder and CEO at Tera",
     initial: "L",
-    quote: "The persistent memory is game-changing. It remembers what worked 6 months ago and uses that context when planning new campaigns. It's like having a CMO who never forgets."
+    quote: "We're thrilled with the results. Ottic transforms our data into high-quality content that drives traffic and compounds over time: a huge asset."
   },
   {
-    name: "James Wilson",
-    handle: "@jwilsontech",
-    initial: "J",
-    quote: "As a solo founder, I can't afford to hire marketing. Ottic lets me compete with funded startups that have full GTM teams. It's like having a whole department for $0."
+    name: "Lucas Costas",
+    handle: "CEO of Briefer (YC S 23)",
+    initial: "L",
+    quote: "We worked with Ottic to support our content strategy, and they are consistently thoughtful, responsive, and easy to collaborate with."
+  },
+  {
+    name: "Sophia Faria",
+    handle: "COO at Abstra (YC S21)",
+    initial: "S",
+    quote: "I was skeptical at first, but Ottic replaced 100% our content team. Highly recommend!"
+  },
+  {
+    name: "Tiago Serrano",
+    handle: "Founder and CEO at Solucx",
+    initial: "T",
+    quote: "Ottic was a game-changer. It's like having a strategic editorial brain and a senior content team in one."
+  },
+  {
+    name: "Leandro Herrera",
+    handle: "Founder and CEO at Tera",
+    initial: "L",
+    quote: "We're thrilled with the results. Ottic transforms our data into high-quality content that drives traffic and compounds over time: a huge asset."
+  },
+  {
+    name: "Lucas Costas",
+    handle: "CEO of Briefer (YC S 23)",
+    initial: "L",
+    quote: "We worked with Ottic to support our content strategy, and they are consistently thoughtful, responsive, and easy to collaborate with."
   },
 ];
 
 function TestimonialCard({ name, handle, initial, quote }: { name: string; handle: string; initial: string; quote: string }) {
   return (
-    <Card className="w-[300px] h-[192px] border-2 border-primary/30 flex-shrink-0">
-      <CardHeader className="p-4 flex flex-col gap-4 h-full">
+    <Card className="w-[300px] min-h-[220px] border-2 border-primary/30 flex-shrink-0">
+      <CardHeader className="p-4 flex flex-col gap-3 h-full">
         <div className="flex items-start gap-3">
           <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
             <span className="text-xl font-bold">{initial}</span>
           </div>
-          <div className="flex-1">
-            <CardTitle className="text-base">{name}</CardTitle>
-            <p className="text-sm text-muted-foreground">{handle}</p>
+          <div className="flex-1 min-w-0">
+            <CardTitle className="text-base leading-tight">{name}</CardTitle>
+            <p className="text-xs text-muted-foreground leading-tight">{handle}</p>
           </div>
         </div>
-        <CardDescription className="text-foreground/80 text-sm line-clamp-4">
+        <CardDescription className="text-foreground/80 text-sm leading-relaxed">
           {quote}
         </CardDescription>
       </CardHeader>
