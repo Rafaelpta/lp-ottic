@@ -73,18 +73,18 @@ export default function Home() {
 
       {/* Header/Navigation */}
       <header className="px-4 lg:px-6 h-14 flex items-center border-b">
-        <a className="flex items-center gap-3" href="#">
+        <a className="flex items-center gap-3 cursor-pointer" href="#">
           <div className="w-12 h-12 bg-foreground flex items-center justify-center">
             <span className="text-2xl font-bold text-background">O</span>
           </div>
           <span className="text-2xl font-bold">Ottic</span>
         </a>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-          <Button variant="ghost" className="text-sm font-medium">
+          <Button variant="ghost" className="text-sm font-medium cursor-pointer">
             Pricing
           </Button>
           <ThemeToggle />
-          <Button size="sm">
+          <Button size="sm" className="cursor-pointer">
             Get started
           </Button>
         </nav>
@@ -122,12 +122,12 @@ export default function Home() {
                     onSubmit={handleSubmit}
                   />
                   <div className="absolute bottom-3 right-3 flex gap-2 z-30">
-                    <Button variant="ghost" size="sm" onClick={handleSubmit} className="text-[#00e572] hover:text-[#06ff83] hover:bg-[#1c3b28]">
+                    <Button variant="ghost" size="sm" onClick={handleSubmit} className="text-[#00e572] hover:text-[#06ff83] hover:bg-[#1c3b28] cursor-pointer">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
                       </svg>
                     </Button>
-                    <Button variant="ghost" size="sm" onClick={handleSubmit} className="text-[#00e572] hover:text-[#06ff83] hover:bg-[#1c3b28]">
+                    <Button variant="ghost" size="sm" onClick={handleSubmit} className="text-[#00e572] hover:text-[#06ff83] hover:bg-[#1c3b28] cursor-pointer">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
@@ -135,7 +135,7 @@ export default function Home() {
                     <Button
                       size="sm"
                       onClick={handleSubmit}
-                      className={`rounded-full transition-all h-10 hover:opacity-90 hover:scale-105 ${
+                      className={`rounded-full transition-all h-10 hover:opacity-90 hover:scale-105 cursor-pointer ${
                         userInput.trim()
                           ? "w-auto px-4 gap-2"
                           : "w-10 p-0"
@@ -161,7 +161,7 @@ export default function Home() {
                       key={index}
                       variant="outline"
                       size="sm"
-                      className="gap-2 text-xs"
+                      className="gap-2 text-xs cursor-pointer"
                       onClick={() => setUserInput(suggestion.prompt)}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,7 +171,7 @@ export default function Home() {
                     </Button>
                   ))}
                 </div>
-                <Button variant="link" className="mt-2 text-xs text-foreground" onClick={rotateSuggestions}>
+                <Button variant="link" className="mt-2 text-xs text-foreground cursor-pointer" onClick={rotateSuggestions}>
                   <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
@@ -705,7 +705,7 @@ export default function Home() {
               </h2>
               <p className="text-muted-foreground md:text-lg">
                 Here's everything you may want to know. For any other info, just{" "}
-                <a href="mailto:contact@ottic.ai" className="text-primary hover:underline">
+                <a href="mailto:contact@ottic.ai" className="text-primary hover:underline cursor-pointer">
                   reach us
                 </a>
                 .
@@ -714,7 +714,7 @@ export default function Home() {
 
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-left cursor-pointer">
                   What makes Ottic different from other content tools?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -723,7 +723,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-left cursor-pointer">
                   How does the AI training work?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -732,7 +732,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-left cursor-pointer">
                   Do I need a content team to use Ottic?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -741,7 +741,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-left cursor-pointer">
                   What's included in the managed service?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -750,7 +750,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="item-5">
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-left cursor-pointer">
                   How quickly will I see results?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -759,7 +759,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="item-6">
-                <AccordionTrigger className="text-left">
+                <AccordionTrigger className="text-left cursor-pointer">
                   Can I cancel or switch plans at any time?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
@@ -798,13 +798,13 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-                <Button size="lg" className="h-14 text-base flex-1 group">
+                <Button size="lg" className="h-14 text-base flex-1 group cursor-pointer">
                   Get Started Free
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Button>
-                <Button size="lg" variant="outline" className="h-14 text-base flex-1 backdrop-blur border-2">
+                <Button size="lg" variant="outline" className="h-14 text-base flex-1 backdrop-blur border-2 cursor-pointer">
                   View GitHub
                 </Button>
               </div>
@@ -847,13 +847,13 @@ export default function Home() {
               © 2025 Ottic. Open source. MIT License.
             </p>
             <nav className="flex gap-4 sm:gap-6">
-              <a className="text-xs hover:underline underline-offset-4" href="#">
+              <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
                 Docs
               </a>
-              <a className="text-xs hover:underline underline-offset-4" href="#">
+              <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
                 GitHub
               </a>
-              <a className="text-xs hover:underline underline-offset-4" href="#">
+              <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
                 Discord
               </a>
             </nav>
@@ -882,7 +882,7 @@ export default function Home() {
                 className="w-full"
               />
             </div>
-            <Button className="w-full" size="lg">
+            <Button className="w-full cursor-pointer" size="lg">
               Continue with Email
             </Button>
 
@@ -898,7 +898,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full cursor-pointer">
                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
@@ -919,7 +919,7 @@ export default function Home() {
                 </svg>
                 Google
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full cursor-pointer">
                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
@@ -932,11 +932,11 @@ export default function Home() {
 
             <p className="text-xs text-center text-muted-foreground">
               By continuing, you agree to our{" "}
-              <a href="#" className="underline hover:text-foreground">
+              <a href="#" className="underline hover:text-foreground cursor-pointer">
                 Terms
               </a>{" "}
               and{" "}
-              <a href="#" className="underline hover:text-foreground">
+              <a href="#" className="underline hover:text-foreground cursor-pointer">
                 Privacy Policy
               </a>
             </p>

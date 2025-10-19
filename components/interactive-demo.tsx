@@ -657,7 +657,7 @@ function ScrollingRow({
             variant={selectedId === prompt.id ? "default" : "outline"}
             size="sm"
             onClick={() => onPromptClick(prompt)}
-            className={`font-mono text-xs whitespace-nowrap transition-all ${
+            className={`font-mono text-xs whitespace-nowrap transition-all cursor-pointer ${
               selectedId === prompt.id
                 ? "ring-2 ring-primary ring-offset-2"
                 : "hover:border-primary/50"
