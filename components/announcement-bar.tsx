@@ -26,7 +26,7 @@ export function AnnouncementBar() {
     let position = 0;
 
     const animate = () => {
-      const speed = isHoveredRef.current ? 0.2 : 1.5; // Slow on hover, fast otherwise
+      const speed = isHoveredRef.current ? 0.1 : 0.5; // Moderate scroll speed
       position -= speed;
 
       // Reset position for infinite scroll
@@ -46,7 +46,7 @@ export function AnnouncementBar() {
   return (
     <div
       ref={containerRef}
-      className="w-full bg-gradient-to-r from-zinc-900 via-zinc-950 to-zinc-900 border-b border-zinc-800 overflow-hidden"
+      className="w-full bg-gradient-to-r from-[#0a2a1d] via-[#122319] to-[#0a2a1d] border-b border-[#009c4e]/30 overflow-hidden"
       onMouseEnter={() => { isHoveredRef.current = true; }}
       onMouseLeave={() => { isHoveredRef.current = false; }}
     >
@@ -57,29 +57,29 @@ export function AnnouncementBar() {
             <div key={index} className="flex items-center gap-2 whitespace-nowrap">
               {item.type === "in-progress" && (
                 <>
-                  <span className="text-zinc-200 text-xs animate-pulse">{item.icon}</span>
-                  <span className="text-xs font-medium text-zinc-100">In Progress:</span>
-                  <span className="text-xs text-zinc-300">{item.text}</span>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 font-medium border border-zinc-700">
+                  <span className="text-[#06ff83] text-xs animate-pulse">{item.icon}</span>
+                  <span className="text-xs font-medium text-[#47ffa4]">In Progress:</span>
+                  <span className="text-xs text-[#00e572]">{item.text}</span>
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-[#1c3b28] text-[#00e572] font-medium border border-[#009c4e]">
                     {item.status}
                   </span>
                 </>
               )}
               {item.type === "planned" && (
                 <>
-                  <span className="text-zinc-400 text-xs">{item.icon}</span>
-                  <span className="text-xs font-medium text-zinc-100">Planned:</span>
-                  <span className="text-xs text-zinc-300">{item.text}</span>
+                  <span className="text-[#00e572]/60 text-xs">{item.icon}</span>
+                  <span className="text-xs font-medium text-[#47ffa4]">Planned:</span>
+                  <span className="text-xs text-[#00e572]">{item.text}</span>
                 </>
               )}
               {item.type === "under-review" && (
                 <>
-                  <span className="text-zinc-300 text-xs">{item.icon}</span>
-                  <span className="text-xs font-medium text-zinc-100">Under Review:</span>
-                  <span className="text-xs text-zinc-300">{item.text}</span>
+                  <span className="text-[#00e572] text-xs">{item.icon}</span>
+                  <span className="text-xs font-medium text-[#47ffa4]">Under Review:</span>
+                  <span className="text-xs text-[#00e572]">{item.text}</span>
                 </>
               )}
-              <span className="text-zinc-700 text-xs">|</span>
+              <span className="text-[#009c4e]/40 text-xs">|</span>
             </div>
           ))}
         </div>

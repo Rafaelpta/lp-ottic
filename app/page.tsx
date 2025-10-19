@@ -84,6 +84,9 @@ export default function Home() {
             Pricing
           </Button>
           <ThemeToggle />
+          <Button variant="ghost" size="sm" className="cursor-pointer" onClick={() => setShowLoginModal(true)}>
+            Login
+          </Button>
           <Button size="sm" className="cursor-pointer">
             Get started
           </Button>
@@ -220,6 +223,26 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 overflow-hidden">
+          <div className="w-full">
+            <div className="text-center mb-12 px-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <span className="text-primary">✦</span>
+                <span className="text-sm font-medium">Testimonials</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Loved by technical teams
+              </h2>
+              <p className="mt-4 text-muted-foreground md:text-xl max-w-[700px] mx-auto">
+                See what founders and engineers are saying about Ottic
+              </p>
+            </div>
+
+            <TestimonialsScroll />
           </div>
         </section>
 
@@ -403,26 +426,6 @@ export default function Home() {
             </div>
 
             <InteractiveDemo />
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 overflow-hidden">
-          <div className="w-full">
-            <div className="text-center mb-12 px-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-primary">✦</span>
-                <span className="text-sm font-medium">Testimonials</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Loved by technical teams
-              </h2>
-              <p className="mt-4 text-muted-foreground md:text-xl max-w-[700px] mx-auto">
-                See what founders and engineers are saying about Ottic
-              </p>
-            </div>
-
-            <TestimonialsScroll />
           </div>
         </section>
 

@@ -82,17 +82,10 @@ export function TestimonialsScroll() {
       <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-      {/* First row - scroll left */}
-      <div className="flex gap-4 mb-4 animate-scroll-left">
+      {/* Single row - scroll left */}
+      <div className="flex gap-4 animate-scroll-left">
         {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
-          <TestimonialCard key={`left-${index}`} {...testimonial} />
-        ))}
-      </div>
-
-      {/* Second row - scroll right */}
-      <div className="flex gap-4 animate-scroll-right">
-        {[...testimonials, ...testimonials, ...testimonials].map((testimonial, index) => (
-          <TestimonialCard key={`right-${index}`} {...testimonial} />
+          <TestimonialCard key={`testimonial-${index}`} {...testimonial} />
         ))}
       </div>
     </div>
