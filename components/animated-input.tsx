@@ -3,14 +3,13 @@
 import { useEffect, useState } from "react";
 
 const commands = [
-  "analyze performance --last-30d --channels all",
-  "create campaign --from top-performing-post",
-  "optimize ads --target-cpa 12 --platform meta",
-  "find opportunities --channel reddit --keywords saas",
-  "schedule posts --platform linkedin --time 10am",
-  "generate report --for-ceo --metrics all",
-  "launch campaign --target technical-founders",
-  "analyze competitors --last-quarter",
+  "Create a Product Hunt launch campaign for next Tuesday",
+  "Get our first 1,000 users in 30 days",
+  "Find subreddits where our target customers hang out",
+  "Launch our new pricing and announce it everywhere",
+  "Analyze why our LinkedIn ads cost so much lately",
+  "Build hype for our beta waitlist opening",
+  "Turn our best case study into social content",
 ];
 
 interface AnimatedInputProps {
