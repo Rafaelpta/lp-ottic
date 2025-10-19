@@ -8,6 +8,7 @@ import { AnimatedInput } from "@/components/animated-input";
 import { TestimonialsScroll } from "@/components/testimonials-scroll";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { InteractiveDemo } from "@/components/interactive-demo";
+import { AnnouncementBar } from "@/components/announcement-bar";
 import {
   Accordion,
   AccordionContent,
@@ -67,6 +68,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Announcement Bar */}
+      <AnnouncementBar />
+
       {/* Header/Navigation */}
       <header className="px-4 lg:px-6 h-14 flex items-center border-b">
         <a className="flex items-center gap-3" href="#">
@@ -99,15 +103,12 @@ export default function Home() {
               {/* Main Heading */}
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-6xl">
-                  Building is easy.
-                  <br />
-                  Distribution is <span className="italic font-serif text-primary">hard</span>.
+                  Run your marketing by chatting with AI
                 </h1>
 
                 <div className="space-y-2 text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
-                  <p>One terminal. Your entire GTM. AI agents orchestrating everything.</p>
-                  <p>From strategy to execution to optimization. No context switching.</p>
-                  <p className="opacity-70">Not another marketing tool. Marketing infrastructure.</p>
+                  <p>Chat in plain English, agents plan and execute across every platform. No setup, no context switching, no marketing team required.</p>
+                  <p className="text-sm opacity-70">Everything is included: SEMrush, Google Ads, Meta, LinkedIn, and 20+ marketing APIs.</p>
                 </div>
               </div>
 
@@ -175,6 +176,47 @@ export default function Home() {
                   </svg>
                   try different ideas
                 </Button>
+              </div>
+
+              {/* Feature Highlights */}
+              <div className="w-full max-w-4xl pt-8">
+                <div className="grid gap-6 md:grid-cols-3">
+                  <div className="text-center p-6 rounded-lg border bg-card/50 backdrop-blur">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-bold mb-2">Context-Aware</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Remembers your brand voice, past campaigns, and what works for your audience
+                    </p>
+                  </div>
+
+                  <div className="text-center p-6 rounded-lg border bg-card/50 backdrop-blur">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-bold mb-2">Instant Execution</h3>
+                    <p className="text-sm text-muted-foreground">
+                      From insight to action in seconds. No manual work, no context switching
+                    </p>
+                  </div>
+
+                  <div className="text-center p-6 rounded-lg border bg-card/50 backdrop-blur">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-bold mb-2">Always Learning</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Analyzes every result, adapts strategies, and gets better every day
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -360,44 +402,6 @@ export default function Home() {
             </div>
 
             <InteractiveDemo />
-
-            <div className="mt-16 grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
-              <div className="text-center p-6 rounded-lg border bg-card/50 backdrop-blur">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold mb-2">Context-Aware</h3>
-                <p className="text-sm text-muted-foreground">
-                  Remembers your brand voice, past campaigns, and what works for your audience
-                </p>
-              </div>
-
-              <div className="text-center p-6 rounded-lg border bg-card/50 backdrop-blur">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold mb-2">Instant Execution</h3>
-                <p className="text-sm text-muted-foreground">
-                  From insight to action in seconds. No manual work, no context switching
-                </p>
-              </div>
-
-              <div className="text-center p-6 rounded-lg border bg-card/50 backdrop-blur">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold mb-2">Always Learning</h3>
-                <p className="text-sm text-muted-foreground">
-                  Analyzes every result, adapts strategies, and gets better every day
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
