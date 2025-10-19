@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 const marketingPrompts = [
   {
     id: 1,
-    label: "Hey, can you research keywords for AI courses in the Brazilian market? I want to understand what people are searching for.",
+    label: "Hey, can you research keywords for AI courses? I want to understand what people are searching for.",
     category: "Research",
-    output: `🔍 Got it! Running keyword research for AI courses in Brazil...
+    output: `🔍 Got it! Running keyword research for AI courses...
 
 Connecting to SEMrush API...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -18,16 +18,16 @@ Connecting to SEMrush API...
 
 Top Opportunities:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"curso de ia"       → 5,400/mo  45% KD  ALTÍSSIMA
-"prompt engineering" → 2,400/mo  61% KD  ALTÍSSIMA
-"go to market"      → 1,600/mo  17% KD  ALTÍSSIMA
+"ai course"         → 5,400/mo  45% KD  VERY HIGH
+"prompt engineering" → 2,400/mo  61% KD  VERY HIGH
+"machine learning"  → 1,600/mo  17% KD  VERY HIGH
 
 Total Traffic Potential: 83.15M visits/year
 Average KD: 41% (Medium competition)
 
 💡 Strategy Recommendation:
-   Focus on "Educacional" + "Conversão" keywords
-   Target "ALTÍSSIMA" relevance terms first
+   Focus on "Educational" + "Conversion" keywords
+   Target "VERY HIGH" relevance terms first
    Estimated reach: 15-20K qualified leads/month`,
     ui: "keyword-research",
   },
@@ -182,26 +182,26 @@ Full report saved: /reports/q4-2024-gtm.pdf`,
 // UI Mockup Components
 function KeywordResearchUI() {
   const keywords = [
-    { keyword: "curso de ia", volume: "5,400", kd: "45%", relevance: "ALTÍSSIMA", category: "Educacional", type: "Conversão" },
-    { keyword: "curso ia", volume: "2,900", kd: "48%", relevance: "ALTÍSSIMA", category: "Educacional", type: "Conversão" },
-    { keyword: "o que é ia generativa", volume: "2,500", kd: "55%", relevance: "ALTA", category: "Core AI", type: "Awareness" },
-    { keyword: "curso de ia gratuito", volume: "2,400", kd: "49%", relevance: "ALTA", category: "Educacional", type: "Conversão" },
-    { keyword: "prompt engineering", volume: "2,400", kd: "61%", relevance: "ALTÍSSIMA", category: "Técnico", type: "Especializado" },
-    { keyword: "cursos de ia", volume: "1,600", kd: "43%", relevance: "ALTA", category: "Educacional", type: "Conversão" },
-    { keyword: "go to market", volume: "1,600", kd: "17%", relevance: "ALTÍSSIMA", category: "Strategy", type: "Estratégico" },
-    { keyword: "curso ia gratuito", volume: "1,300", kd: "58%", relevance: "ALTA", category: "Educacional", type: "Conversão" },
-    { keyword: "ia generativa de musica gratis", volume: "1,300", kd: "24%", relevance: "MÉDIA", category: "Aplicação", type: "Funcional" },
-    { keyword: "cursos ia", volume: "1,000", kd: "40%", relevance: "ALTA", category: "Educacional", type: "Conversão" },
-    { keyword: "ia generativa de imagens", volume: "1,000", kd: "64%", relevance: "MÉDIA", category: "Aplicação", type: "Funcional" },
-    { keyword: "ia generativa o que é", volume: "720", kd: "54%", relevance: "MÉDIA", category: "Core AI", type: "Awareness" },
-    { keyword: "prompt engineer", volume: "720", kd: "52%", relevance: "MÉDIA", category: "Profissão", type: "Carreira" },
-    { keyword: "go to market strategy", volume: "590", kd: "57%", relevance: "ALTA", category: "Strategy", type: "Estratégico" },
-    { keyword: "product discovery", volume: "590", kd: "18%", relevance: "ALTA", category: "Strategy", type: "Estratégico" },
-    { keyword: "curso de ia para iniciantes", volume: "390", kd: "42%", relevance: "ALTA", category: "Educacional", type: "Conversão" },
-    { keyword: "product strategy", volume: "390", kd: "52%", relevance: "ALTÍSSIMA", category: "Strategy", type: "Estratégico" },
-    { keyword: "product roadmap", volume: "390", kd: "43%", relevance: "ALTA", category: "Strategy", type: "Estratégico" },
-    { keyword: "ia generativa exemplos", volume: "390", kd: "40%", relevance: "MÉDIA", category: "Aplicação", type: "Tutorial" },
-    { keyword: "curso gratuito de ia", volume: "320", kd: "43%", relevance: "ALTA", category: "Educacional", type: "Conversão" },
+    { keyword: "ai course", volume: "5,400", kd: "45%", relevance: "VERY HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "artificial intelligence course", volume: "2,900", kd: "48%", relevance: "VERY HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "what is generative ai", volume: "2,500", kd: "55%", relevance: "HIGH", category: "Core AI", type: "Awareness" },
+    { keyword: "free ai course", volume: "2,400", kd: "49%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "prompt engineering", volume: "2,400", kd: "61%", relevance: "VERY HIGH", category: "Technical", type: "Specialized" },
+    { keyword: "ai courses online", volume: "1,600", kd: "43%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "machine learning", volume: "1,600", kd: "17%", relevance: "VERY HIGH", category: "Technical", type: "Specialized" },
+    { keyword: "learn ai free", volume: "1,300", kd: "58%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "ai music generator", volume: "1,300", kd: "24%", relevance: "MEDIUM", category: "Application", type: "Functional" },
+    { keyword: "ai certification", volume: "1,000", kd: "40%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "generative ai images", volume: "1,000", kd: "64%", relevance: "MEDIUM", category: "Application", type: "Functional" },
+    { keyword: "what is artificial intelligence", volume: "720", kd: "54%", relevance: "MEDIUM", category: "Core AI", type: "Awareness" },
+    { keyword: "prompt engineer", volume: "720", kd: "52%", relevance: "MEDIUM", category: "Career", type: "Professional" },
+    { keyword: "ai training", volume: "590", kd: "57%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "deep learning course", volume: "590", kd: "18%", relevance: "HIGH", category: "Technical", type: "Specialized" },
+    { keyword: "ai for beginners", volume: "390", kd: "42%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "machine learning tutorial", volume: "390", kd: "52%", relevance: "VERY HIGH", category: "Technical", type: "Tutorial" },
+    { keyword: "ai bootcamp", volume: "390", kd: "43%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    { keyword: "generative ai examples", volume: "390", kd: "40%", relevance: "MEDIUM", category: "Application", type: "Tutorial" },
+    { keyword: "free machine learning course", volume: "320", kd: "43%", relevance: "HIGH", category: "Educational", type: "Conversion" },
   ];
 
   return (
@@ -213,7 +213,7 @@ function KeywordResearchUI() {
           <span className="text-primary font-medium">3,398 keywords</span>
           <span>83.15M traffic</span>
           <span>41% avg KD</span>
-          <span className="text-green-500">🇧🇷 Brazil</span>
+          <span className="text-green-500">🌐 Global</span>
         </div>
       </div>
 
@@ -264,8 +264,8 @@ function KeywordResearchUI() {
                 </td>
                 <td className="px-3 py-2">
                   <span className={`px-2 py-0.5 rounded text-[9px] font-medium ${
-                    kw.relevance === "ALTÍSSIMA" ? "bg-green-500/10 text-green-500" :
-                    kw.relevance === "ALTA" ? "bg-primary/10 text-primary" :
+                    kw.relevance === "VERY HIGH" ? "bg-green-500/10 text-green-500" :
+                    kw.relevance === "HIGH" ? "bg-primary/10 text-primary" :
                     "bg-muted text-muted-foreground"
                   }`}>
                     {kw.relevance}
@@ -743,7 +743,7 @@ export function InteractiveDemo() {
           {/* Two Column Layout - Terminal + UI */}
           <div className="grid grid-cols-1 lg:grid-cols-2 divide-x divide-border">
             {/* Left: Terminal */}
-            <div className="bg-[#0a1e1e] p-6 min-h-[600px] max-h-[600px] overflow-auto font-mono text-xs">
+            <div className="bg-[#0a1e1e] p-6 h-[600px] overflow-auto font-mono text-xs">
               {/* User Message - Highlighted */}
               <div className="mb-4">
                 <div className="flex items-start gap-2 mb-1">
@@ -772,7 +772,7 @@ export function InteractiveDemo() {
             </div>
 
             {/* Right: UI Output */}
-            <div className="bg-background overflow-hidden">
+            <div className="bg-background h-[600px] overflow-hidden">
               {renderUI()}
             </div>
           </div>

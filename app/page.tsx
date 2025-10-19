@@ -95,12 +95,12 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-8 md:py-12 lg:py-16 min-h-[calc(100vh-3.5rem)]">
+        <section className="w-full py-8 md:py-10 lg:py-12 min-h-[calc(100vh-3.5rem)]">
           <div className="container px-4 md:px-6 mx-auto max-w-5xl h-full flex items-center">
             <div className="flex flex-col items-center space-y-5 text-center w-full">
               {/* Badge */}
               <Badge variant="secondary" className="px-4 py-1.5 text-sm">
-                GTM Infrastructure for the Age of Agents
+                GTM infrastructure for AI-native companies
               </Badge>
 
               {/* Main Heading */}
@@ -227,7 +227,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 overflow-hidden">
+        <section className="w-full py-8 md:py-12 lg:py-16 overflow-hidden">
           <div className="w-full">
             <div className="text-center mb-12 px-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
@@ -246,182 +246,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Features Section */}
-        <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/20">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                <span className="text-primary">✦</span>
-                <span className="text-sm font-medium">Features</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-                Why teams choose Ottic
-              </h2>
-              <p className="mt-4 text-muted-foreground md:text-xl max-w-[700px] mx-auto">
-                Built for technical teams who can't afford a marketing department
-              </p>
-            </div>
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              <Card className="group relative border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/50 backdrop-blur">
-                <CardHeader className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                      />
-                    </svg>
-                  </div>
-                  <CardTitle className="text-xl mb-3">Single Source of Truth</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    All your marketing data in one place. No more context switching between 10 tools.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="group relative border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/50 backdrop-blur">
-                <CardHeader className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                  <CardTitle className="text-xl mb-3">Agents That Execute</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    Not just suggestions—real execution. Agents coordinate across channels automatically.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="group relative border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/50 backdrop-blur">
-                <CardHeader className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                      />
-                    </svg>
-                  </div>
-                  <CardTitle className="text-xl mb-3">Persistent Memory</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    Remembers every campaign, every result. Learns what works for YOUR audience.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="group relative border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/50 backdrop-blur">
-                <CardHeader className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                      />
-                    </svg>
-                  </div>
-                  <CardTitle className="text-xl mb-3">Deep Integrations</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    Semrush, Meta Ads, HubSpot, GA4, Mailchimp. Not just API calls—true orchestration.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="group relative border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/50 backdrop-blur">
-                <CardHeader className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
-                    </svg>
-                  </div>
-                  <CardTitle className="text-xl mb-3">Open Source</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    Free to self-host forever. No vendor lock-in. Your data stays yours.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="group relative border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 bg-card/50 backdrop-blur">
-                <CardHeader className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <CardTitle className="text-xl mb-3">Terminal Interface</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">
-                    For people who build things. Scriptable, automatable, composable. CLI for humans.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* Interactive Demo Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 overflow-hidden bg-muted/30">
+        <section className="w-full py-8 md:py-12 lg:py-16 overflow-hidden bg-muted/30">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                 <span className="text-primary">✦</span>
-                <span className="text-sm font-medium">Interactive Demo</span>
+                <span className="text-sm font-medium">Demo</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                See Ottic in Action
+                Stop managing marketing. Start shipping it.
               </h2>
               <p className="mt-4 text-muted-foreground md:text-xl max-w-[700px] mx-auto">
-                Click on any marketing command below to see how Ottic's AI agents execute it instantly. From analytics to campaign creation—all in one terminal.
+                See how founders run entire campaigns by describing what they need. Real execution across all platforms, not just suggestions.
               </p>
             </div>
 
@@ -429,278 +266,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How It Works Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="text-primary text-xl">✦</span>
-                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">How It Works</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-                Simple Process, Powerful Results
-              </h2>
-              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
-                Get from idea to execution in three simple steps. No steep learning curve.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
-              <div className="flex flex-col items-start p-6 rounded-lg border bg-card">
-                <div className="text-4xl font-bold text-primary mb-4">01</div>
-                <h3 className="text-xl font-bold mb-2">Tell Us Your Goal</h3>
-                <p className="text-muted-foreground">
-                  Describe what you want to achieve. Launch a product? Generate leads? Build authority? We handle the strategy.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-start p-6 rounded-lg border bg-card">
-                <div className="text-4xl font-bold text-primary mb-4">02</div>
-                <h3 className="text-xl font-bold mb-2">We Execute Everything</h3>
-                <p className="text-muted-foreground">
-                  Our AI agents coordinate across channels—content, ads, email, social. Fully managed execution, no context switching.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-start p-6 rounded-lg border bg-card">
-                <div className="text-4xl font-bold text-primary mb-4">03</div>
-                <h3 className="text-xl font-bold mb-2">Track & Optimize</h3>
-                <p className="text-muted-foreground">
-                  Real-time dashboard shows what's working. Agents learn and optimize automatically. You focus on building.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="text-primary text-xl">✦</span>
-                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Use Cases</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-                Built for Technical Teams
-              </h2>
-              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
-                From pre-launch to scale, Ottic adapts to your GTM needs.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <CardTitle>Pre-Launch Validation</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Test messaging, find your ICP, and validate demand before building. Launch with traction, not hope.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                    </svg>
-                  </div>
-                  <CardTitle>Growth Stage</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Systematic content engine, multi-channel campaigns, and performance optimization. Scale what works.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <CardTitle>Enterprise GTM</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Coordinate across regions, segments, and channels. One source of truth for your entire GTM operation.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <CardTitle>24/7 Monitoring</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Agents track competitors, trends, and opportunities. Get alerts when something changes in your market.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <CardTitle>Performance Marketing</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Automated A/B testing, budget allocation, and creative optimization. Maximize ROI across all paid channels.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                    </svg>
-                  </div>
-                  <CardTitle>Content Operations</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    From research to publishing to distribution. Full content pipeline managed by AI, customized to your voice.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Roadmap Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
-          <div className="container px-4 md:px-6 mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="text-primary text-xl">✦</span>
-                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Roadmap</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
-                What's Coming Next
-              </h2>
-              <p className="text-muted-foreground md:text-lg max-w-2xl mx-auto">
-                We're constantly evolving. Here's what we're building for you.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-              <div className="flex flex-col p-6 rounded-lg border bg-card">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold">Multi-Channel Dashboard</h3>
-                  <Badge variant="secondary" className="text-xs">Live</Badge>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  Unified view of all your GTM activities across content, ads, email, and social.
-                </p>
-              </div>
-
-              <div className="flex flex-col p-6 rounded-lg border bg-card">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold">AI Content Engine</h3>
-                  <Badge variant="secondary" className="text-xs">Live</Badge>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  Proprietary AI trained on your brand voice, generating on-brand content at scale.
-                </p>
-              </div>
-
-              <div className="flex flex-col p-6 rounded-lg border bg-card">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold">Slack/Discord Integration</h3>
-                  <Badge className="text-xs bg-primary/20 text-primary">In Progress</Badge>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  Get updates and control campaigns directly from your team chat. No context switching.
-                </p>
-              </div>
-
-              <div className="flex flex-col p-6 rounded-lg border bg-card">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold">Advanced Analytics</h3>
-                  <Badge variant="outline" className="text-xs">Q2 2025</Badge>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  Attribution modeling, LTV prediction, and cohort analysis. Data-driven decisions at every level.
-                </p>
-              </div>
-
-              <div className="flex flex-col p-6 rounded-lg border bg-card">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold">Team Collaboration</h3>
-                  <Badge variant="outline" className="text-xs">Q2 2025</Badge>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  Multi-user workspaces, approval workflows, and role-based permissions for larger teams.
-                </p>
-              </div>
-
-              <div className="flex flex-col p-6 rounded-lg border bg-card">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                  </svg>
-                </div>
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold">API & Webhooks</h3>
-                  <Badge variant="outline" className="text-xs">Q3 2025</Badge>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  Integrate Ottic with your existing stack. Build custom workflows and automations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* FAQ Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-8 md:py-12 lg:py-16">
           <div className="container px-4 md:px-6 mx-auto max-w-4xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
@@ -718,127 +285,59 @@ export default function Home() {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-left cursor-pointer">
-                  What makes Ottic different from other content tools?
+                  What is Ottic?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Ottic combines proprietary AI technology with fully managed execution. Unlike generic GPT tools or traditional agencies, we build a custom content engine trained on your data, delivering world-class quality without the cost or limitations of human teams.
+                  Ottic is GTM infrastructure for AI-native companies. It's an AI-powered system that runs your entire go-to-market—from content and ads to analytics and distribution—through simple chat commands. Think of it as your marketing department in a terminal.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left cursor-pointer">
-                  How does the AI training work?
+                  Do I need marketing experience to use Ottic?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Our proprietary content engine learns from your existing data, analyzes your niche, and continuously improves based on performance metrics. It's trained specifically for your industry and audience, not generic content generation.
+                  No. Ottic is built for founders who want to ship fast without hiring a marketing team. You describe what you want in plain English, and AI agents handle strategy and execution. No marketing expertise required.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left cursor-pointer">
-                  Do I need a content team to use Ottic?
+                  What is an AI agent for GTM?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  No. Ottic is designed to replace or augment your content team. We handle everything from strategy to execution to optimization. You simply review and approve—no technical skills or content expertise required.
+                  AI agents are autonomous systems that plan and execute marketing tasks across platforms. Unlike chatbots that just suggest ideas, Ottic's agents actually run campaigns, create content, optimize ads, and coordinate across channels—without human intervention.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-left cursor-pointer">
-                  What's included in the managed service?
+                  Why should I care about GTM infrastructure now?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  We handle your entire content pipeline: competitive research, strategy development, content creation, SEO/AEO optimization, publishing, and ongoing performance analysis. Think of it as having a senior content team without hiring one.
+                  AI search is reshaping how people discover products. Companies like HubSpot lost 75% of their organic traffic in the past year. CACs are skyrocketing. Building product is getting easier, but GTM is getting harder. In the long run, distribution is your only moat—not the product itself.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-5">
                 <AccordionTrigger className="text-left cursor-pointer">
-                  How quickly will I see results?
+                  What types of marketing can I run with Ottic?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Most clients start seeing increased organic traffic within 30-60 days. The content engine improves every week as it learns what works for your specific audience. Results compound over time.
+                  Everything. Launch campaigns, create content, run paid ads, analyze performance, optimize SEO, track competitors, schedule social posts, build email sequences, and more. Ottic coordinates all channels from a single interface—no switching between 10 different tools.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-6">
                 <AccordionTrigger className="text-left cursor-pointer">
-                  Can I cancel or switch plans at any time?
+                  How much does Ottic cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Yes. All plans are month-to-month with no long-term contracts. You can upgrade, downgrade, or cancel anytime. We believe in earning your business every month.
+                  Ottic is free forever if you self-host (open source, MIT license). For Ottic Cloud with managed infrastructure and premium features, pricing starts at a fraction of hiring a single marketer. No long-term contracts—pay monthly and cancel anytime.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
-        </section>
-
-        {/* Final CTA Section */}
-        <section className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden">
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple-500/10 to-pink-500/10" />
-          <div className="absolute inset-0 bg-grid-white/10 bg-[size:20px_20px]" />
-
-          <div className="container px-4 md:px-6 mx-auto relative z-10">
-            <div className="flex flex-col items-center space-y-8 text-center max-w-4xl mx-auto">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur">
-                <span className="text-primary">✦</span>
-                <span className="text-sm font-medium">Ready to Start?</span>
-              </div>
-
-              {/* Heading */}
-              <div className="space-y-6">
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                  Stop switching tools.
-                  <br />
-                  <span className="text-primary">Start shipping.</span>
-                </h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl leading-relaxed">
-                  Join technical teams who are building billion-dollar companies without hiring a marketing department. Free forever to self-host, or try Ottic Cloud.
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-                <Button size="lg" className="h-14 text-base flex-1 group cursor-pointer">
-                  Get Started Free
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Button>
-                <Button size="lg" variant="outline" className="h-14 text-base flex-1 backdrop-blur border-2 cursor-pointer">
-                  View GitHub
-                </Button>
-              </div>
-
-              {/* Social Proof */}
-              <div className="flex flex-col sm:flex-row items-center gap-6 pt-8 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <span>1,000+ developers</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Free to self-host</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                  <span>MIT License</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute top-1/4 -left-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl" />
         </section>
       </main>
 
