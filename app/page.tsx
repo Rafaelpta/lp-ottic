@@ -103,12 +103,13 @@ export default function Home() {
               {/* Main Heading */}
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-6xl">
-                  Run your marketing by chatting with AI
+                  You chat.
+                  <br />
+                  Agents run your entire GTM.
                 </h1>
 
                 <div className="space-y-2 text-muted-foreground text-base md:text-lg max-w-3xl mx-auto">
-                  <p>Chat in plain English, agents plan and execute across every platform. No setup, no context switching, no marketing team required.</p>
-                  <p className="text-sm opacity-70">Everything is included: SEMrush, Google Ads, Meta, LinkedIn, and 20+ marketing APIs.</p>
+                  <p>Chat in plain English, agents plan and execute across every platform. No setup, no tools, no <span className="line-through">marketing team</span> required.</p>
                 </div>
               </div>
 
@@ -211,9 +212,9 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-bold mb-2">Always Learning</h3>
+                    <h3 className="text-lg font-bold mb-2">Everything Built-in</h3>
                     <p className="text-sm text-muted-foreground">
-                      Analyzes every result, adapts strategies, and gets better every day
+                      SEMrush, Google Ads, Meta, LinkedIn, YouTube—every marketing tool you need, already connected.
                     </p>
                   </div>
                 </div>
