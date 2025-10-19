@@ -65,20 +65,20 @@ export function AnimatedInput({ onSubmit, value = "", onChange }: AnimatedInputP
 
   return (
     <div className="relative">
-      {value === "" && (
-        <div className="absolute top-3 left-3 pointer-events-none z-10 flex items-center">
-          <span className="inline-block w-[2px] h-4 bg-foreground animate-cursor" />
-          <span className="text-sm text-muted-foreground font-mono ml-1">{placeholder}</span>
-        </div>
-      )}
       <textarea
         value={value}
         onChange={handleTextareaChange}
         onKeyDown={handleKeyDown}
         autoFocus
-        className="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-3 pb-16 text-sm ring-offset-background placeholder:text-muted-foreground outline-none ring-2 ring-ring ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none relative z-20"
+        className="flex min-h-[120px] w-full rounded-md border-2 border-[#009c4e] bg-[#122319] text-[#47ffa4] px-3 py-3 pb-16 text-sm placeholder:text-[#00e572] outline-none ring-2 ring-[#06ff83]/30 focus:ring-[#06ff83] ring-offset-2 ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 resize-none relative z-10 transition-all"
         rows={4}
       />
+      {value === "" && (
+        <div className="absolute top-3 left-3 pointer-events-none z-20 flex items-center">
+          <span className="inline-block w-[2px] h-4 bg-[#06ff83] animate-cursor shadow-[0_0_8px_rgba(6,255,131,0.5)]" />
+          <span className="text-sm text-[#00e572] font-mono ml-1">{placeholder}</span>
+        </div>
+      )}
     </div>
   );
 }
