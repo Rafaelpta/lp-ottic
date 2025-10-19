@@ -57,6 +57,13 @@ export function AnimatedInput({ onSubmit, value = "", onChange }: AnimatedInputP
     }
   };
 
+  // Auto-resize textarea based on content
+  const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    onChange?.(e.target.value);
+    e.target.style.height = 'auto';
+    e.target.style.height = Math.max(120, e.target.scrollHeight) + 'px';
+  };
+
   return (
     <div className="relative">
       {value === "" && (
@@ -67,10 +74,10 @@ export function AnimatedInput({ onSubmit, value = "", onChange }: AnimatedInputP
       )}
       <textarea
         value={value}
-        onChange={(e) => onChange?.(e.target.value)}
+        onChange={handleTextareaChange}
         onKeyDown={handleKeyDown}
         autoFocus
-        className="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-3 text-sm ring-offset-background placeholder:text-muted-foreground outline-none ring-2 ring-ring ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-mono resize-none pr-32 relative z-20"
+        className="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-3 pb-16 text-sm ring-offset-background placeholder:text-muted-foreground outline-none ring-2 ring-ring ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none relative z-20"
         rows={4}
       />
     </div>

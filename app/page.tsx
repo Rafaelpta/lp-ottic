@@ -26,9 +26,43 @@ import { Input } from "@/components/ui/input";
 export default function Home() {
   const [userInput, setUserInput] = useState("");
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [suggestionSet, setSuggestionSet] = useState(0);
 
   const handleSubmit = () => {
     setShowLoginModal(true);
+  };
+
+  const suggestionSets = [
+    [
+      { icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2 a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", text: "Show me last week's performance", prompt: "Show me how my marketing performed last week. Break it down by channel - organic, paid ads, social, email. Highlight what's working and what's not. My LinkedIn ads seem expensive lately, flag if something's off." },
+      { icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z", text: "Create campaign from my best post", prompt: "My post about AI replacing junior developers blew up on LinkedIn. Turn it into a full campaign - adapt it for Twitter, write an email for my newsletter, create ad variations. Make it work across all channels." },
+      { icon: "M13 10V3L4 14h7v7l9-11h-7z", text: "Optimize my ads for lower costs", prompt: "My Meta ads are too expensive right now. Review what I'm running, kill what's not working, and suggest new angles to test. I need to lower my cost per customer without losing volume." },
+      { icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z", text: "Find opportunities on Reddit", prompt: "Find subreddits where B2B founders talk about marketing problems. I sell a website builder. Show me trending discussions where I can jump in and help. Draft some authentic comments I can use." },
+      { icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z", text: "Schedule posts across all channels", prompt: "Plan my content for the next two weeks - LinkedIn, Twitter, and blog. We're launching a new feature soon. Optimize posting times for tech founders and mix in product updates with helpful content." },
+      { icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", text: "Generate executive report", prompt: "Create a marketing summary for our board meeting. Cover what we spent, what we got, what worked, what didn't. Include recommendations for next quarter's budget. Keep it visual and to the point." },
+    ],
+    [
+      { icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z", text: "Launch Product Hunt campaign", prompt: "We're launching on Product Hunt next week. Create the product description, first comment, gallery images, and an email to send our users. Also draft outreach messages for hunters. Goal is to hit top 5." },
+      { icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", text: "Write newsletter about latest update", prompt: "Write a newsletter announcing our new Figma integration. My audience is design-focused founders. Make the subject line catchy, explain why they'll love it, add GIFs, and a clear call-to-action. Keep it conversational." },
+      { icon: "M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z", text: "What's my best performing content?", prompt: "Show me my top content from the last few months across blog, LinkedIn, and Twitter. Rank by engagement and signups. What patterns should I repeat? What's working that I should double down on?" },
+      { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", text: "Create week-long launch campaign", prompt: "Design a launch campaign for our new AI feature. Map out content for each day - teasers, announcement, tutorials, case studies, closing offer. Coordinate across email, social, and blog." },
+      { icon: "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z", text: "Turn my landing page into ads", prompt: "My landing page converts well with the headline 'Build websites in minutes, not weeks'. Extract this into ad variations for LinkedIn, Facebook carousels, and Google search ads. Keep what's working." },
+      { icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z", text: "Find trending topics in my niche", prompt: "What's trending in B2B SaaS marketing right now? Find hot topics from Twitter, LinkedIn, and communities. Suggest unique angles we can take. I want thought leadership, not generic takes." },
+    ],
+    [
+      { icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z", text: "Where should I find my first 100 users?", prompt: "I built a Slack integration for customer feedback. Currently just friends and family using it. My ideal customers are product managers at small startups. Where should I find them? Give me specific channels and what to do daily." },
+      { icon: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1", text: "Build backlink strategy for SEO", prompt: "Our blog needs more authority. Find sites in the project management space that accept guest posts. Create an outreach email template and suggest content ideas we can pitch. I have a few hours per week for this." },
+      { icon: "M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122", text: "Launch viral Twitter thread campaign", prompt: "Write a Twitter thread about how we hit our revenue goal in two months. Make the first tweet hook people instantly. Include data, screenshots, and one controversial take. Aim for maximum engagement." },
+      { icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", text: "Analyze competitor marketing strategy", prompt: "Deep dive into how Notion, ClickUp, and Airtable do marketing. What channels are they using? What's their messaging? Find their top keywords and ad patterns. Show me gaps where we can differentiate." },
+      { icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z", text: "Calculate ROI of current campaigns", prompt: "Break down my marketing ROI from last quarter. Show me what each channel actually returned - Google Ads, LinkedIn, content. Calculate true cost per customer and tell me where to invest more or cut back." },
+      { icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2", text: "Build content calendar for next month", prompt: "Plan next month's content across LinkedIn, blog, Twitter, and newsletter. We have a product update mid-month and a conference at the end. Create a cohesive story that ties everything together." },
+    ],
+  ];
+
+  const currentSuggestions = suggestionSets[suggestionSet];
+
+  const rotateSuggestions = () => {
+    setSuggestionSet((prev) => (prev + 1) % suggestionSets.length);
   };
 
   return (
@@ -120,44 +154,22 @@ export default function Home() {
               <div className="pt-3">
                 <p className="text-muted-foreground/70 text-xs mb-2">Not sure where to start? Try one of these:</p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  <Button variant="outline" size="sm" className="gap-2 font-mono text-xs">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2 a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                    analyze --last-7d
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-2 font-mono text-xs">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                    </svg>
-                    create campaign --from top-post
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-2 font-mono text-xs">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    optimize ads --target-cpa 15
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-2 font-mono text-xs">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    find opportunities --channel reddit
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-2 font-mono text-xs">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    schedule posts --platform all
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-2 font-mono text-xs">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    generate report --for-ceo
-                  </Button>
+                  {currentSuggestions.map((suggestion, index) => (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      size="sm"
+                      className="gap-2 text-xs"
+                      onClick={() => setUserInput(suggestion.prompt)}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={suggestion.icon} />
+                      </svg>
+                      {suggestion.text}
+                    </Button>
+                  ))}
                 </div>
-                <Button variant="link" className="mt-2 text-xs font-mono text-foreground">
+                <Button variant="link" className="mt-2 text-xs text-foreground" onClick={rotateSuggestions}>
                   <svg className="w-3 h-3 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
