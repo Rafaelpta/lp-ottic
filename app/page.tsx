@@ -9,6 +9,7 @@ import { TestimonialsScroll } from "@/components/testimonials-scroll";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { InteractiveDemo } from "@/components/interactive-demo";
 import { AnnouncementBar } from "@/components/announcement-bar";
+import { StructuredData } from "@/components/structured-data";
 import {
   Accordion,
   AccordionContent,
@@ -67,9 +68,11 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Announcement Bar */}
-      <AnnouncementBar />
+    <>
+      <StructuredData />
+      <div className="flex flex-col min-h-screen">
+        {/* Announcement Bar */}
+        <AnnouncementBar />
 
       {/* Header/Navigation */}
       <header className="sticky top-0 z-50 px-4 lg:px-6 h-14 flex items-center border-b backdrop-blur-lg bg-background/80 supports-[backdrop-filter]:bg-background/60">
@@ -80,6 +83,11 @@ export default function Home() {
           <span className="text-2xl font-bold">Ottic</span>
         </a>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
+          <a href="https://ottic.ai/blog/" target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" className="text-sm font-medium cursor-pointer">
+              Blog
+            </Button>
+          </a>
           <Button variant="ghost" className="text-sm font-medium cursor-pointer">
             Pricing
           </Button>
@@ -344,9 +352,9 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-12 border-t">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Logo and Slogan */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 md:col-span-2">
               <a className="flex items-center gap-3 cursor-pointer" href="#">
                 <div className="w-10 h-10 bg-foreground flex items-center justify-center">
                   <span className="text-xl font-bold text-background">O</span>
@@ -364,26 +372,40 @@ export default function Home() {
                   Ottic
                 </Badge>
               </div>
+
+              <p className="text-xs text-muted-foreground mt-4">
+                © 2025 Ottic
+              </p>
             </div>
 
-            {/* Footer Content */}
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex flex-col gap-1">
-                <p className="text-xs text-muted-foreground">
-                  © 2025 Ottic. Open source. MIT License.
-                </p>
-              </div>
-              <nav className="flex gap-4 sm:gap-6">
-                <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
-                  Docs
-                </a>
-                <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
-                  GitHub
-                </a>
-                <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
-                  Discord
-                </a>
-              </nav>
+            {/* Company Column */}
+            <div className="flex flex-col gap-3">
+              <h3 className="font-semibold text-sm">Company</h3>
+              <a href="#" className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
+                Pricing
+              </a>
+              <a href="https://ottic.ai/blog/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
+                Blog
+              </a>
+              <a
+                href="https://www.linkedin.com/company/ottic_app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
+              >
+                LinkedIn
+              </a>
+            </div>
+
+            {/* Legal Column */}
+            <div className="flex flex-col gap-3">
+              <h3 className="font-semibold text-sm">Legal</h3>
+              <a href="/terms" className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
+                Terms of Service
+              </a>
+              <a href="/privacy" className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors">
+                Privacy Policy
+              </a>
             </div>
           </div>
         </div>
@@ -471,6 +493,7 @@ export default function Home() {
           </div>
         </DialogContent>
       </Dialog>
-    </div>
+      </div>
+    </>
   );
 }

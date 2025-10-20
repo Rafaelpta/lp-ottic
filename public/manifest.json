@@ -1,0 +1,21 @@
+{
+  "name": "Ottic - GTM Infrastructure for AI-Native Companies",
+  "short_name": "Ottic",
+  "description": "Chat in plain English, AI agents plan and execute your entire go-to-market across every platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#009c4e",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
