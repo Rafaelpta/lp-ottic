@@ -235,10 +235,10 @@ export default function Home() {
                 <span className="text-sm font-medium">Testimonials</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Loved by technical teams
+                What builders are saying
               </h2>
               <p className="mt-4 text-muted-foreground md:text-xl max-w-[700px] mx-auto">
-                See what founders and engineers are saying about Ottic
+                Teams shipping their GTM with Ottic
               </p>
             </div>
 
@@ -255,10 +255,10 @@ export default function Home() {
                 <span className="text-sm font-medium">Demo</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Stop managing marketing. Start shipping it.
+                Stop managing marketing.<br />Start shipping it.
               </h2>
               <p className="mt-4 text-muted-foreground md:text-xl max-w-[700px] mx-auto">
-                See how founders run entire campaigns by describing what they need. Real execution across all platforms, not just suggestions.
+                See how to plan and run entire campaigns by describing what you need. Real execution across all platforms, not just suggestions.
               </p>
             </div>
 
@@ -274,11 +274,11 @@ export default function Home() {
                 FAQs
               </h2>
               <p className="text-muted-foreground md:text-lg">
-                Here's everything you may want to know. For any other info, just{" "}
-                <a href="mailto:contact@ottic.ai" className="text-primary hover:underline cursor-pointer">
-                  reach us
-                </a>
-                .
+                Got questions?{" "}
+                <a href="mailto:rafael@ottic.ai" className="text-muted-foreground underline hover:text-foreground cursor-pointer">
+                  Reach us
+                </a>{" "}
+                anytime.
               </p>
             </div>
 
@@ -342,23 +342,49 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-6 border-t">
+      <footer className="w-full py-12 border-t">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs text-muted-foreground">
-              © 2025 Ottic. Open source. MIT License.
-            </p>
-            <nav className="flex gap-4 sm:gap-6">
-              <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
-                Docs
+          <div className="flex flex-col gap-8">
+            {/* Logo and Slogan */}
+            <div className="flex flex-col gap-4">
+              <a className="flex items-center gap-3 cursor-pointer" href="#">
+                <div className="w-10 h-10 bg-foreground flex items-center justify-center">
+                  <span className="text-xl font-bold text-background">O</span>
+                </div>
+                <span className="text-xl font-bold">Ottic</span>
               </a>
-              <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
-                GitHub
-              </a>
-              <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
-                Discord
-              </a>
-            </nav>
+              <p className="text-sm text-muted-foreground max-w-md">
+                If you can vibe code, you can vibe market.
+              </p>
+
+              {/* Built with Ottic Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 w-fit">
+                <span className="text-xs font-medium text-muted-foreground">This landing page was built with</span>
+                <Badge className="text-xs px-2.5 py-1 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+                  Ottic
+                </Badge>
+              </div>
+            </div>
+
+            {/* Footer Content */}
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-1">
+                <p className="text-xs text-muted-foreground">
+                  © 2025 Ottic. Open source. MIT License.
+                </p>
+              </div>
+              <nav className="flex gap-4 sm:gap-6">
+                <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
+                  Docs
+                </a>
+                <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
+                  GitHub
+                </a>
+                <a className="text-xs hover:underline underline-offset-4 cursor-pointer" href="#">
+                  Discord
+                </a>
+              </nav>
+            </div>
           </div>
         </div>
       </footer>
