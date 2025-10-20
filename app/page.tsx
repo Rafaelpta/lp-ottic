@@ -72,7 +72,7 @@ export default function Home() {
       <AnnouncementBar />
 
       {/* Header/Navigation */}
-      <header className="px-4 lg:px-6 h-14 flex items-center border-b">
+      <header className="sticky top-0 z-50 px-4 lg:px-6 h-14 flex items-center border-b backdrop-blur-lg bg-background/80 supports-[backdrop-filter]:bg-background/60">
         <a className="flex items-center gap-3 cursor-pointer" href="#">
           <div className="w-12 h-12 bg-foreground flex items-center justify-center">
             <span className="text-2xl font-bold text-background">O</span>
