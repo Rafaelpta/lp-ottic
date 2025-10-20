@@ -83,14 +83,12 @@ export default function Home() {
           <span className="text-2xl font-bold">Ottic</span>
         </a>
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-          <a href="https://ottic.ai/blog/" target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" className="text-sm font-medium cursor-pointer">
-              Blog
-            </Button>
+          <a href="https://ottic.ai/blog/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium cursor-pointer hover:underline underline-offset-4">
+            Blog
           </a>
-          <Button variant="ghost" className="text-sm font-medium cursor-pointer">
+          <a href="#" className="text-sm font-medium cursor-pointer hover:underline underline-offset-4">
             Pricing
-          </Button>
+          </a>
           <ThemeToggle />
           <Button variant="ghost" size="sm" className="cursor-pointer" onClick={() => setShowLoginModal(true)}>
             Login
