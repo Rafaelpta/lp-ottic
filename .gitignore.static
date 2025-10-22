@@ -1,0 +1,67 @@
+# Minimal .gitignore for static site
+# You can replace your existing .gitignore with this if you want to keep only the static site
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Optional: Exclude Next.js files if you want to keep only the static site
+# Uncomment these lines if you want to remove Next.js from version control:
+# node_modules/
+# .next/
+# out/
+# *.log
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# .env*.local
+# app/
+# components/
+# lib/
+# public/ # (already copied to docs/)
+# next.config.ts
+# tsconfig.json
+# postcss.config.mjs
+# tailwind.config.ts
+# components.json
+# eslint.config.mjs
