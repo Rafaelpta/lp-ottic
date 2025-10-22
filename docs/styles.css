@@ -1173,6 +1173,11 @@ body {
   background-color: rgba(0, 0, 0, 0.02);
 }
 
+.demo-section-full .container {
+  display: block;
+  align-items: initial;
+}
+
 .dark .demo-section-full {
   background-color: rgba(255, 255, 255, 0.02);
 }
