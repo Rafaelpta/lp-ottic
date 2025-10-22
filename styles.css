@@ -82,10 +82,11 @@ body {
   white-space: nowrap;
   padding: 0 1rem;
   animation: scroll-announcement 30s linear infinite;
+  will-change: transform;
 }
 
 .announcement-scroll:hover {
-  animation-play-state: paused;
+  animation-duration: 90s;
 }
 
 @keyframes scroll-announcement {
@@ -1197,11 +1198,11 @@ body {
 }
 
 .prompt-row:nth-child(1) {
-  animation: scroll-left-slow 40s linear infinite;
+  animation: scroll-left-slow 52s linear infinite;
 }
 
 .prompt-row:nth-child(2) {
-  animation: scroll-right-slow 40s linear infinite;
+  animation: scroll-right-slow 52s linear infinite;
 }
 
 @keyframes scroll-left-slow {
