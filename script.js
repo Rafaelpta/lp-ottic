@@ -40,25 +40,25 @@ const testimonials = [
   {
     name: "Leandro Herrera",
     handle: "Founder and CEO at Tera",
-    image: "/testimonials/leandro-herrera.jpg",
+    image: "/public/testimonials/leandro-herrera.jpg",
     quote: "We're thrilled with the results. Ottic transforms our data into high-quality content that drives traffic and compounds over time: a huge asset."
   },
   {
     name: "Lucas Costas",
     handle: "CEO of Briefer (YC S 23)",
-    image: "/testimonials/lucas-costas.jpg",
+    image: "/public/testimonials/lucas-costas.jpg",
     quote: "We worked with Ottic to support our content strategy, and they are consistently thoughtful, responsive, and easy to collaborate with."
   },
   {
     name: "Sophia Faria",
     handle: "COO at Abstra (YC S21)",
-    image: "/testimonials/sophia-faria.jpg",
+    image: "/public/testimonials/sophia-faria.jpg",
     quote: "I was skeptical at first, but Ottic replaced 100% our content team. Highly recommend!"
   },
   {
     name: "Tiago Serrano",
     handle: "Founder and CEO at Solucx",
-    image: "/testimonials/tiago-serrano.jpg",
+    image: "/public/testimonials/tiago-serrano.jpg",
     quote: "Ottic was a game-changer. It's like having a strategic editorial brain and a senior content team in one."
   },
 ];
