@@ -331,6 +331,106 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
+// Demo Section
+const demoData = {
+  research: {
+    prompt: "Hey, can you research keywords for AI courses? I want to understand what people are searching for.",
+    output: `🔍 Got it! Running keyword research for AI courses...
+
+Connecting to SEMrush API...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Fetched 3,398 keywords
+✓ Filtered by relevance & volume
+✓ Categorized by intent & type
+
+Top Opportunities:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"ai course"         → 5,400/mo  45% KD  VERY HIGH
+"prompt engineering" → 2,400/mo  61% KD  VERY HIGH
+"machine learning"  → 1,600/mo  17% KD  VERY HIGH
+
+Total Traffic Potential: 83.15M visits/year
+Average KD: 41% (Medium competition)
+
+💡 Strategy Recommendation:
+   Focus on "Educational" + "Conversion" keywords
+   Target "VERY HIGH" relevance terms first
+   Estimated reach: 15-20K qualified leads/month`
+  },
+  campaign: {
+    prompt: "I loved that technical post we published last week. Can you create a campaign based on it?",
+    output: `🚀 Perfect! Creating a campaign from your top-performing post...
+
+Analyzing: "Technical deep-dive: Our migration story"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Generated 8 new technical posts in similar style
+✓ Scheduled across LinkedIn, Twitter, Reddit
+✓ Set up A/B tests for 4 headline variations
+✓ Allocated $8,500 budget
+
+Content Calendar:
+Mon 10am → "Database optimization techniques"
+Wed 2pm  → "Scaling Redis for 10M requests/day"
+Fri 9am  → "Our approach to zero-downtime deploys"
+
+Targeting:
+• Senior Engineers (5+ years)
+• DevOps/SRE roles
+• Companies: 100-1000 employees
+
+Estimated reach: 25K-30K technical professionals
+Ready to launch when you are!`
+  },
+  optimization: {
+    prompt: "Our ads are too expensive. Can you optimize them to get CPA down to $12?",
+    output: `⚡ On it! Analyzing your ads and optimizing for $12 CPA...
+
+Current CPA: $18.50 | Target: $12.00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Changes Made:
+✓ Paused 3 underperforming ad sets (-$2.1K/mo)
+✓ Increased budget on top performers (+$3.2K/mo)
+✓ Refined audience: removed "general tech" segment
+✓ Updated 5 ad creatives with higher CTR variants
+
+New Performance Projection:
+• CPA: $18.50 → $11.80 (↓36%) ✨
+• Monthly spend: $12.4K → $10.8K (↓13%)
+• Conversions: 670 → 915 (↑37%)
+
+ROI Improvement: +$4,200/month
+
+All changes deployed! Monitoring for 48h...`
+  }
+};
+
+function setupDemoTabs() {
+  const tabs = document.querySelectorAll('.demo-tab');
+  const promptText = document.getElementById('demo-prompt-text');
+  const outputText = document.getElementById('demo-output-text');
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      // Remove active from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      // Add active to clicked tab
+      tab.classList.add('active');
+
+      // Get demo data
+      const demoType = tab.getAttribute('data-demo');
+      const data = demoData[demoType];
+
+      // Update content
+      if (promptText && outputText && data) {
+        promptText.textContent = data.prompt;
+        outputText.textContent = data.output;
+      }
+    };
+  });
+}
+
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
   // Escape to close modal
@@ -355,6 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTestimonials();
   renderFAQ();
   renderAnnouncementBar();
+  setupDemoTabs();
   typeWriter();
 
   // Event listeners

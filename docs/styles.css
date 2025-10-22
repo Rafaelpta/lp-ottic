@@ -560,6 +560,107 @@ body {
   color: var(--muted-foreground);
 }
 
+/* Demo Section */
+.demo-section {
+  width: 100%;
+  padding: 2rem 0 4rem;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark .demo-section {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.demo-container {
+  max-width: 56rem;
+  margin: 0 auto;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.demo-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--muted);
+}
+
+.demo-tab {
+  flex: 1;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  border-bottom: 2px solid transparent;
+}
+
+.demo-tab:hover {
+  background-color: var(--accent);
+}
+
+.demo-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background-color: var(--background);
+}
+
+.demo-content {
+  padding: 1.5rem;
+}
+
+.demo-prompt {
+  margin-bottom: 1.5rem;
+}
+
+.demo-prompt-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.demo-prompt-text {
+  padding: 1rem;
+  background-color: var(--muted);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.demo-output {
+  margin-top: 1.5rem;
+}
+
+.demo-output-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.demo-output-text {
+  padding: 1rem;
+  background-color: #122319;
+  color: #47ffa4;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  font-family: var(--font-mono);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 /* Testimonials Section */
 .testimonials-section {
   width: 100%;
@@ -782,7 +883,7 @@ body {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 2rem;
 }
 
@@ -790,12 +891,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  grid-column: span 2;
 }
 
 @media (max-width: 768px) {
-  .footer-brand {
-    grid-column: span 1;
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 }
 
