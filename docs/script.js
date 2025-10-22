@@ -455,6 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTestimonials();
   renderFAQ();
   renderAnnouncementBar();
+  initializeDemo();
   setupDemoTabs();
   typeWriter();
 
@@ -462,3 +463,536 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('theme-toggle').onclick = toggleTheme;
   document.getElementById('user-input').oninput = handleInputChange;
 });
+// Complete Demo Section JavaScript
+
+const demoPrompts = [
+  {
+    id: 1,
+    category: "Research",
+    label: "Hey, can you research keywords for AI courses? I want to understand what people are searching for.",
+    ui: "keyword-research",
+    output: `🔍 Got it! Running keyword research for AI courses...
+
+Connecting to SEMrush API...
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Fetched 3,398 keywords
+✓ Filtered by relevance & volume
+✓ Categorized by intent & type
+
+Top Opportunities:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"ai course"         → 5,400/mo  45% KD  VERY HIGH
+"prompt engineering" → 2,400/mo  61% KD  VERY HIGH
+"machine learning"  → 1,600/mo  17% KD  VERY HIGH
+
+Total Traffic Potential: 83.15M visits/year
+Average KD: 41% (Medium competition)
+
+💡 Strategy Recommendation:
+   Focus on "Educational" + "Conversion" keywords
+   Target "VERY HIGH" relevance terms first
+   Estimated reach: 15-20K qualified leads/month`
+  },
+  {
+    id: 2,
+    category: "Campaign",
+    label: "I loved that technical post we published last week. Can you create a campaign based on it?",
+    ui: "campaign",
+    output: `🚀 Perfect! Creating a campaign from your top-performing post...
+
+Analyzing: "Technical deep-dive: Our migration story"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Generated 8 new technical posts in similar style
+✓ Scheduled across LinkedIn, Twitter, Reddit
+✓ Set up A/B tests for 4 headline variations
+✓ Allocated $8,500 budget
+
+Content Calendar:
+Mon 10am → "Database optimization techniques"
+Wed 2pm  → "Scaling Redis for 10M requests/day"
+Fri 9am  → "Our approach to zero-downtime deploys"
+
+Targeting:
+• Senior Engineers (5+ years)
+• DevOps/SRE roles
+• Companies: 100-1000 employees
+
+Estimated reach: 25K-30K technical professionals
+Ready to launch when you are!`
+  },
+  {
+    id: 3,
+    category: "Optimization",
+    label: "Our ads are too expensive. Can you optimize them to get CPA down to $12?",
+    ui: "optimization",
+    output: `⚡ On it! Analyzing your ads and optimizing for $12 CPA...
+
+Current CPA: $18.50 | Target: $12.00
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Changes Made:
+✓ Paused 3 underperforming ad sets (-$2.1K/mo)
+✓ Increased budget on top performers (+$3.2K/mo)
+✓ Refined audience: removed "general tech" segment
+✓ Updated 5 ad creatives with higher CTR variants
+
+New Performance Projection:
+• CPA: $18.50 → $11.80 (↓36%) ✨
+• Monthly spend: $12.4K → $10.8K (↓13%)
+• Conversions: 670 → 915 (↑37%)
+
+ROI Improvement: +$4,200/month
+
+All changes deployed! Monitoring for 48h...`
+  },
+  {
+    id: 4,
+    category: "Research",
+    label: "Find me some good Reddit threads where we can contribute and get visibility",
+    ui: "research",
+    output: `🔍 Sure! Scanning Reddit for relevant opportunities...
+
+Found 12 high-value threads where you can add value
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+r/devops (2.1M members)
+└─ "Struggling with CI/CD pipeline costs"
+   → 847 upvotes │ Posted 4h ago
+   → Opportunity Score: 9.2/10
+   💬 I've drafted a helpful response for you
+
+r/kubernetes (890K members)
+└─ "How do you monitor prod at scale?"
+   → 623 upvotes │ Posted 8h ago
+   → Opportunity Score: 8.7/10
+   💬 Response ready to review
+
+r/aws (450K members)
+└─ "Best practices for cost optimization?"
+   → 412 upvotes │ Posted 2h ago
+   → Opportunity Score: 9.0/10
+   💬 Response ready
+
+Want me to post these responses for you?`
+  },
+  {
+    id: 5,
+    category: "Scheduling",
+    label: "Schedule some LinkedIn posts for the next 2 weeks. Focus on our best performing times.",
+    ui: "scheduling",
+    output: `📅 Got it! Setting up your LinkedIn content calendar...
+
+Scheduled 12 posts for optimal engagement times
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Week 1:
+Mon 10:00 → "5 mistakes we made scaling to 1M users"
+Wed 14:00 → "Why we chose Postgres over MongoDB"
+Fri 09:00 → "Technical hiring: our interview process"
+
+Week 2:
+Mon 10:00 → "Observability on a budget: our stack"
+Wed 14:00 → "From monolith to microservices"
+Thu 16:00 → "How we handle database migrations"
+Fri 09:00 → "Our approach to on-call rotations"
+
+Optimal posting times based on your audience:
+• Monday 10am (24% higher engagement)
+• Wednesday 2pm (18% higher engagement)
+• Friday 9am (31% higher engagement)
+
+All set! Auto-publishing enabled.`
+  },
+  {
+    id: 6,
+    category: "Reporting",
+    label: "I have a board meeting tomorrow. Can you generate an executive summary of our GTM performance?",
+    ui: "reporting",
+    output: `📈 Absolutely! Pulling together your Q4 GTM report...
+
+Executive GTM Summary - Q4 2024
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CAC              $847  (↓23% vs Q3)
+LTV              $12.4K (↑15% vs Q3)
+LTV:CAC Ratio    14.6x (Target: 10x) ✓
+
+Marketing Spend: $42.5K
+Pipeline Generated: $1.2M
+ROI: 28x
+
+Top Channels:
+1. LinkedIn      → $680K pipeline (57%)
+2. Reddit        → $312K pipeline (26%)
+3. Twitter       → $198K pipeline (17%)
+
+Content Performance:
+• 47 pieces published
+• 2.8M impressions
+• 89K clicks (3.2% CTR)
+• 847 conversions
+
+🎯 Next Quarter Recommendations:
+   → Scale LinkedIn (proven channel)
+   → Launch podcast series (in progress)
+   → Expand Reddit presence (untapped)
+
+Full report saved: /reports/q4-2024-gtm.pdf`
+  }
+];
+
+// UI Generators
+const UIGenerators = {
+  'keyword-research': () => {
+    const keywords = [
+      { keyword: "ai course", volume: "5,400", kd: "45%", relevance: "VERY HIGH", category: "Educational", type: "Conversion" },
+      { keyword: "artificial intelligence course", volume: "2,900", kd: "48%", relevance: "VERY HIGH", category: "Educational", type: "Conversion" },
+      { keyword: "what is generative ai", volume: "2,500", kd: "55%", relevance: "HIGH", category: "Core AI", type: "Awareness" },
+      { keyword: "free ai course", volume: "2,400", kd: "49%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+      { keyword: "prompt engineering", volume: "2,400", kd: "61%", relevance: "VERY HIGH", category: "Technical", type: "Specialized" },
+      { keyword: "ai courses online", volume: "1,600", kd: "43%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+      { keyword: "machine learning", volume: "1,600", kd: "17%", relevance: "VERY HIGH", category: "Technical", type: "Specialized" },
+      { keyword: "learn ai free", volume: "1,300", kd: "58%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+      { keyword: "ai music generator", volume: "1,300", kd: "24%", relevance: "MEDIUM", category: "Application", type: "Functional" },
+      { keyword: "ai certification", volume: "1,000", kd: "40%", relevance: "HIGH", category: "Educational", type: "Conversion" },
+    ];
+
+    return `
+      <div class="ui-keyword-research">
+        <div class="ui-toolbar">
+          <span class="stat">16 courses</span>
+          <span class="stat highlight">3,398 keywords</span>
+          <span class="stat">83.15M traffic</span>
+          <span class="stat">41% avg KD</span>
+          <span class="stat">🌐 Global</span>
+        </div>
+        <div class="ui-filters">
+          <input type="text" placeholder="Search..." />
+          <select><option>Product</option></select>
+          <select><option>Category</option></select>
+          <select><option>Relevance</option></select>
+        </div>
+        <div class="keyword-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Volume</th>
+                <th>KD%</th>
+                <th>Relevance</th>
+                <th>Category</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${keywords.map(kw => `
+                <tr>
+                  <td><strong>${kw.keyword}</strong></td>
+                  <td><span class="keyword-value">${kw.volume}</span></td>
+                  <td><span class="${parseInt(kw.kd) < 30 ? 'keyword-kd-low' : 'keyword-kd-high'}">${kw.kd}</span></td>
+                  <td><span class="relevance-badge ${kw.relevance === 'VERY HIGH' ? 'very-high' : kw.relevance === 'HIGH' ? 'high' : 'medium'}">${kw.relevance}</span></td>
+                  <td><span class="category-badge">${kw.category}</span></td>
+                  <td>${kw.type}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `;
+  },
+
+  'scheduling': () => {
+    const posts = [
+      { day: "Mon", time: "10:00", title: "5 mistakes we made scaling to 1M users", engagement: "High" },
+      { day: "Wed", time: "14:00", title: "Why we chose Postgres over MongoDB", engagement: "High" },
+      { day: "Fri", time: "09:00", title: "Technical hiring: our interview process", engagement: "Very High" },
+      { day: "Mon", time: "10:00", title: "Observability on a budget: our stack", engagement: "High" },
+      { day: "Wed", time: "14:00", title: "From monolith to microservices", engagement: "Medium" },
+    ];
+
+    return `
+      <div class="ui-scheduling">
+        <div class="ui-header">
+          <h3>LinkedIn Content Calendar</h3>
+          <span class="meta">Next 14 days • 12 posts</span>
+        </div>
+        <div class="calendar-list">
+          ${posts.map(post => `
+            <div class="calendar-item">
+              <div class="calendar-item-content">
+                <div class="calendar-item-title">${post.title}</div>
+                <div class="calendar-item-time">${post.day} ${post.time}</div>
+              </div>
+              <span class="engagement-badge ${post.engagement === 'Very High' ? 'very-high' : post.engagement === 'High' ? 'high' : 'medium'}">${post.engagement}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  },
+
+  'campaign': () => {
+    return `
+      <div class="ui-campaign">
+        <div class="campaign-header">
+          <h3>Technical Deep-Dive Series</h3>
+          <div class="campaign-meta">8 posts • 3 platforms • $8,500 budget</div>
+        </div>
+
+        <div class="campaign-section">
+          <h4>Content Calendar</h4>
+          <div class="campaign-item">
+            <div>
+              <div class="campaign-item-title">Database optimization techniques</div>
+              <div class="campaign-item-time">Monday 10:00 AM</div>
+            </div>
+            <span class="status-badge">Scheduled</span>
+          </div>
+          <div class="campaign-item">
+            <div>
+              <div class="campaign-item-title">Scaling Redis for 10M requests/day</div>
+              <div class="campaign-item-time">Wednesday 2:00 PM</div>
+            </div>
+            <span class="status-badge">Scheduled</span>
+          </div>
+          <div class="campaign-item">
+            <div>
+              <div class="campaign-item-title">Our approach to zero-downtime deploys</div>
+              <div class="campaign-item-time">Friday 9:00 AM</div>
+            </div>
+            <span class="status-badge">Scheduled</span>
+          </div>
+        </div>
+
+        <div class="campaign-section">
+          <h4>Targeting</h4>
+          <div class="targeting-tags">
+            <span class="tag">Senior Engineers</span>
+            <span class="tag">DevOps/SRE</span>
+            <span class="tag">100-1000 employees</span>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
+  'optimization': () => {
+    return `
+      <div class="ui-optimization">
+        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Ad Optimization Results</h3>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Target CPA</div>
+            <div class="metric-value primary">$12.00</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">New CPA</div>
+            <div class="metric-value success">$11.80</div>
+            <div class="metric-change">↓ 36%</div>
+          </div>
+        </div>
+
+        <div class="campaign-section">
+          <h4>Changes Made</h4>
+          <div class="changes-list">
+            <div class="change-item">
+              <span class="check">✓</span>
+              <span>Paused 3 underperforming ad sets</span>
+              <span class="change-amount negative">-$2.1K/mo</span>
+            </div>
+            <div class="change-item">
+              <span class="check">✓</span>
+              <span>Increased budget on top performers</span>
+              <span class="change-amount positive">+$3.2K/mo</span>
+            </div>
+            <div class="change-item">
+              <span class="check">✓</span>
+              <span>Refined audience targeting</span>
+            </div>
+            <div class="change-item">
+              <span class="check">✓</span>
+              <span>Updated 5 ad creatives</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="roi-card">
+          <div class="roi-label">ROI Improvement</div>
+          <div class="roi-value">+$4,200/month</div>
+        </div>
+      </div>
+    `;
+  },
+
+  'research': () => {
+    return `
+      <div class="ui-campaign">
+        <div class="campaign-header">
+          <h3>Reddit Opportunities</h3>
+        </div>
+
+        <div class="campaign-item" style="margin-bottom: 1rem;">
+          <div>
+            <div class="campaign-item-title">r/devops - "Struggling with CI/CD pipeline costs"</div>
+            <div class="campaign-item-time">847 upvotes │ Posted 4h ago</div>
+            <div style="margin-top: 0.5rem; font-size: 0.75rem;">💬 Response drafted and ready to post</div>
+          </div>
+          <span class="status-badge" style="background-color: rgba(34, 197, 94, 0.1); color: rgb(34 197 94);">9.2/10</span>
+        </div>
+
+        <div class="campaign-item" style="margin-bottom: 1rem;">
+          <div>
+            <div class="campaign-item-title">r/kubernetes - "How do you monitor prod at scale?"</div>
+            <div class="campaign-item-time">623 upvotes │ Posted 8h ago</div>
+            <div style="margin-top: 0.5rem; font-size: 0.75rem;">💬 Response drafted and ready to review</div>
+          </div>
+          <span class="status-badge" style="background-color: rgba(34, 197, 94, 0.1); color: rgb(34 197 94);">8.7/10</span>
+        </div>
+
+        <div class="campaign-item">
+          <div>
+            <div class="campaign-item-title">r/aws - "Best practices for cost optimization?"</div>
+            <div class="campaign-item-time">412 upvotes │ Posted 2h ago</div>
+            <div style="margin-top: 0.5rem; font-size: 0.75rem;">💬 Response ready to post</div>
+          </div>
+          <span class="status-badge" style="background-color: rgba(34, 197, 94, 0.1); color: rgb(34 197 94);">9.0/10</span>
+        </div>
+      </div>
+    `;
+  },
+
+  'reporting': () => {
+    return `
+      <div class="ui-optimization">
+        <h3 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Executive GTM Report - Q4 2024</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+          <div class="metric-card">
+            <div class="metric-label">CAC</div>
+            <div class="metric-value">$847</div>
+            <div class="metric-change">↓ 23% vs Q3</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">LTV</div>
+            <div class="metric-value">$12.4K</div>
+            <div class="metric-change">↑ 15% vs Q3</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">LTV:CAC</div>
+            <div class="metric-value success">14.6x</div>
+            <div style="font-size: 0.75rem; color: var(--muted-foreground); margin-top: 0.25rem;">Target: 10x ✓</div>
+          </div>
+        </div>
+
+        <div class="campaign-section">
+          <h4>Top Channels</h4>
+          <div style="display: flex; align-items: center; justify-between; padding: 0.75rem; background-color: var(--card); border: 1px solid var(--border); border-radius: 0.375rem; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.875rem;">LinkedIn</span>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div style="width: 8rem; background-color: var(--muted); border-radius: 9999px; height: 0.5rem;">
+                <div style="width: 57%; background-color: var(--primary); height: 0.5rem; border-radius: 9999px;"></div>
+              </div>
+              <span style="font-size: 0.875rem; font-weight: 600;">$680K</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; justify-between; padding: 0.75rem; background-color: var(--card); border: 1px solid var(--border); border-radius: 0.375rem; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.875rem;">Reddit</span>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div style="width: 8rem; background-color: var(--muted); border-radius: 9999px; height: 0.5rem;">
+                <div style="width: 26%; background-color: var(--primary); height: 0.5rem; border-radius: 9999px;"></div>
+              </div>
+              <span style="font-size: 0.875rem; font-weight: 600;">$312K</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; justify-between; padding: 0.75rem; background-color: var(--card); border: 1px solid var(--border); border-radius: 0.375rem;">
+            <span style="font-size: 0.875rem;">Twitter</span>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div style="width: 8rem; background-color: var(--muted); border-radius: 9999px; height: 0.5rem;">
+                <div style="width: 17%; background-color: var(--primary); height: 0.5rem; border-radius: 9999px;"></div>
+              </div>
+              <span style="font-size: 0.875rem; font-weight: 600;">$198K</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1rem;">
+          <div class="metric-card">
+            <div class="metric-label">Content Published</div>
+            <div style="font-size: 1.25rem; font-weight: 700;">47 pieces</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Conversions</div>
+            <div style="font-size: 1.25rem; font-weight: 700;">847</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+};
+
+// Initialize Demo
+function initializeDemo() {
+  renderScrollingPrompts();
+  selectPrompt(demoPrompts[0]);
+}
+
+// Render Scrolling Prompt Rows
+function renderScrollingPrompts() {
+  const row1 = document.getElementById('prompt-row-1');
+  const row2 = document.getElementById('prompt-row-2');
+
+  if (!row1 || !row2) return;
+
+  const prompts1 = demoPrompts.slice(0, 3);
+  const prompts2 = demoPrompts.slice(3, 6);
+
+  // Duplicate for infinite scroll
+  row1.innerHTML = [...prompts1, ...prompts1].map(prompt => createPromptButton(prompt)).join('');
+  row2.innerHTML = [...prompts2, ...prompts2].map(prompt => createPromptButton(prompt)).join('');
+
+  // Add click handlers
+  document.querySelectorAll('.prompt-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const promptId = parseInt(btn.dataset.promptId);
+      const prompt = demoPrompts.find(p => p.id === promptId);
+      if (prompt) selectPrompt(prompt);
+    });
+  });
+}
+
+function createPromptButton(prompt) {
+  return `
+    <button class="prompt-button" data-prompt-id="${prompt.id}">
+      <span class="prompt-category">${prompt.category}</span>
+      ${prompt.label}
+    </button>
+  `;
+}
+
+// Select and Display Prompt
+function selectPrompt(prompt) {
+  // Update active button
+  document.querySelectorAll('.prompt-button').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.dataset.promptId) === prompt.id);
+  });
+
+  // Update terminal
+  const userMessage = document.getElementById('terminal-user-message');
+  const output = document.getElementById('terminal-output');
+
+  if (userMessage) userMessage.textContent = prompt.label;
+  if (output) output.textContent = prompt.output;
+
+  // Update UI panel
+  const uiPanel = document.getElementById('demo-ui-panel');
+  if (uiPanel && UIGenerators[prompt.ui]) {
+    uiPanel.innerHTML = UIGenerators[prompt.ui]();
+  }
+}
+
+// Export for use in main script
+if (typeof window !== 'undefined') {
+  window.initializeDemo = initializeDemo;
+}

@@ -181,40 +181,64 @@
             </div>
         </section>
 
-        <!-- Interactive Demo Section -->
-        <section class="demo-section">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-badge">
-                        <span>✦</span>
-                        <span>Demo</span>
-                    </div>
-                    <h2 class="section-title">
-                        Stop managing marketing.<br>Start shipping it.
-                    </h2>
-                    <p class="section-subtitle">
-                        See how to plan and run entire campaigns by describing what you need. Real execution across all platforms, not just suggestions.
-                    </p>
+<!-- Complete Demo Section HTML - to replace in index.html -->
+
+<!-- Interactive Demo Section -->
+<section class="demo-section-full">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-badge">
+                <span>✦</span>
+                <span>Demo</span>
+            </div>
+            <h2 class="section-title">
+                Stop managing marketing.<br>Start shipping it.
+            </h2>
+            <p class="section-subtitle">
+                See how to plan and run entire campaigns by describing what you need. Real execution across all platforms, not just suggestions.
+            </p>
+        </div>
+
+        <!-- Scrolling Prompts -->
+        <div class="scrolling-prompts">
+            <div class="prompt-row" id="prompt-row-1">
+                <!-- Will be populated by JS -->
+            </div>
+            <div class="prompt-row" id="prompt-row-2">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Main Demo Container -->
+        <div class="demo-workspace">
+            <!-- Mac-style window header -->
+            <div class="demo-workspace-header">
+                <div class="window-controls">
+                    <div class="window-dot red"></div>
+                    <div class="window-dot yellow"></div>
+                    <div class="window-dot green"></div>
                 </div>
+                <div class="workspace-title">ottic://workspace</div>
+                <div class="agent-status">
+                    <div class="status-dot"></div>
+                    <span>AI Agent Active</span>
+                </div>
+            </div>
 
-                <div class="demo-container">
-                    <div class="demo-tabs">
-                        <button class="demo-tab active" data-demo="research">Research</button>
-                        <button class="demo-tab" data-demo="campaign">Campaign</button>
-                        <button class="demo-tab" data-demo="optimization">Optimization</button>
+            <!-- Split Screen Content -->
+            <div class="demo-split-view">
+                <!-- Left: Terminal -->
+                <div class="demo-terminal">
+                    <div class="terminal-prompt">
+                        <div class="terminal-label">You:</div>
+                        <div class="terminal-user-message" id="terminal-user-message">
+                            Hey, can you research keywords for AI courses? I want to understand what people are searching for.
+                        </div>
                     </div>
 
-                    <div class="demo-content">
-                        <div class="demo-prompt">
-                            <div class="demo-prompt-label">You:</div>
-                            <div class="demo-prompt-text" id="demo-prompt-text">
-                                Hey, can you research keywords for AI courses? I want to understand what people are searching for.
-                            </div>
-                        </div>
-
-                        <div class="demo-output">
-                            <div class="demo-output-label">Ottic Agent:</div>
-                            <pre class="demo-output-text" id="demo-output-text">🔍 Got it! Running keyword research for AI courses...
+                    <div class="terminal-response">
+                        <div class="terminal-label agent">Ottic AI:</div>
+                        <pre class="terminal-output" id="terminal-output">🔍 Got it! Running keyword research for AI courses...
 
 Connecting to SEMrush API...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -235,11 +259,25 @@ Average KD: 41% (Medium competition)
    Focus on "Educational" + "Conversion" keywords
    Target "VERY HIGH" relevance terms first
    Estimated reach: 15-20K qualified leads/month</pre>
-                        </div>
+                    </div>
+
+                    <div class="terminal-cursor">
+                        <span class="prompt-symbol">$</span>
+                        <span class="cursor-blink"></span>
                     </div>
                 </div>
+
+                <!-- Right: UI Mockup -->
+                <div class="demo-ui-panel" id="demo-ui-panel">
+                    <!-- UI content will be dynamically inserted here -->
+                </div>
             </div>
-        </section>
+
+            <!-- Glow effect -->
+            <div class="demo-glow"></div>
+        </div>
+    </div>
+</section>
 
         <!-- Testimonials Section -->
         <section class="testimonials-section">
